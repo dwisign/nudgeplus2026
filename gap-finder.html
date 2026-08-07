@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Out What's Missing — Nudgeplus Academy</title>
+<meta name="description" content="Trying to get people to do something differently — and it's not working? Answer 5 quick questions and find out exactly which step is missing. Free, plain language, no sign-up. By Nudgeplus Academy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── GAP FINDER — page-specific widget styles (uses shared design tokens) ── */
+#gapfinder {
+  padding-top: 160px;
+  padding-bottom: 100px;
+  min-height: 70vh;
+}
+
+@media (max-width: 768px) {
+  #gapfinder {
+    padding-top: 120px;
+    padding-bottom: 64px;
+  }
+}
+
+.gf-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.gf-card {
+  background: var(--surface-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  padding: 2.75rem;
+}
+
+@media (max-width: 640px) {
+  .gf-card {
+    padding: 1.9rem 1.5rem;
+    border-radius: var(--radius-lg);
+  }
+}
+
+/* Progress bar */
+.prog { height: 3px; background: var(--border); border-radius: 2px; margin-bottom: 1.6rem; }
+.prog-f { height: 100%; background: var(--primary); border-radius: 2px; transition: width .4s ease; }
+.step-tag {
+  font-size: .68rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--text-dim); margin-bottom: .5rem; display: block;
+}
+
+/* Option cards */
+.opts { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 1.4rem; }
+.opt {
+  display: flex; align-items: flex-start; gap: .85rem;
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm); padding: .95rem 1.1rem;
+  cursor: pointer; text-align: left; width: 100%;
+  font-family: var(--font-B); transition: all var(--transition-fast);
+}
+.opt:hover { border-color: var(--primary-border); background: var(--primary-light); }
+.opt.on { border-color: var(--primary); background: var(--primary-light); }
+.opt-dot {
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 1.5px solid var(--border); flex-shrink: 0; margin-top: 2px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition-fast);
+}
+.opt.on .opt-dot { background: var(--primary); border-color: var(--primary); }
+.opt.on .opt-dot::after {
+  content: ''; width: 7px; height: 7px;
+  background: #fff; border-radius: 50%; display: block;
+}
+.opt-text { font-size: .87rem; color: var(--text); line-height: 1.55; }
+
+/* Back/next navigation row */
+.nav { display: flex; justify-content: space-between; align-items: center; margin-top: .4rem; }
+.btn-back {
+  background: transparent; border: none;
+  font-family: var(--font-B); font-size: .84rem;
+  color: var(--text-dim); cursor: pointer; padding: .5rem 0;
+  transition: color var(--transition-fast);
+}
+.btn-back:hover { color: var(--text-muted); }
+.btn-next {
+  background: var(--primary); color: #fff; border: none;
+  padding: .72rem 1.6rem; border-radius: var(--radius-sm);
+  font-family: var(--font-B); font-size: .88rem; font-weight: 700;
+  cursor: pointer; transition: all var(--transition-fast);
+}
+.btn-next:hover:not(:disabled) { background: var(--primary-hover); }
+.btn-next:disabled { opacity: .38; cursor: not-allowed; }
+
+/* Form fields */
+.field-lbl {
+  font-size: .68rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--text-muted); margin-bottom: .38rem; display: block;
+}
+#gapfinder select, #gapfinder textarea {
+  width: 100%; background: var(--surface);
+  border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+  padding: .62rem .9rem; font-family: var(--font-B);
+  font-size: .86rem; color: var(--text); outline: none;
+  transition: border-color var(--transition-fast); -webkit-appearance: none;
+}
+#gapfinder select:focus, #gapfinder textarea:focus { border-color: var(--primary); }
+#gapfinder textarea { resize: vertical; min-height: 70px; }
+.ctx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin-bottom: .9rem; }
+@media (max-width: 480px) { .ctx-grid { grid-template-columns: 1fr; } }
+
+/* Callout boxes */
+.side-note {
+  background: var(--surface-subtle); border-radius: var(--radius-sm);
+  padding: .85rem 1rem; font-size: .82rem;
+  color: var(--text-muted); line-height: 1.65; margin-bottom: 1.1rem;
+}
+.teal-box {
+  border-left: 3px solid var(--primary); padding: 1rem 1.2rem;
+  background: var(--primary-light); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: .9rem 0;
+}
+.amber-box {
+  border: 1.5px solid var(--secondary-border); background: var(--secondary-light);
+  border-radius: var(--radius-md); padding: 1rem 1.2rem; margin: .9rem 0;
+}
+
+/* Stat cards (welcome) */
+.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; margin: 1.2rem 0; }
+.stat-card {
+  background: var(--surface-subtle); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: .85rem .7rem; text-align: center;
+}
+.stat-card-n { font-size: .9rem; font-weight: 700; color: var(--text); }
+.stat-card-l { font-size: .68rem; color: var(--text-dim); margin-top: .2rem; line-height: 1.4; }
+
+/* Primary button */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--primary); color: #fff; border: none;
+  padding: .85rem 1.9rem; border-radius: var(--radius-sm);
+  font-family: var(--font-B); font-size: .95rem; font-weight: 700;
+  cursor: pointer; transition: all var(--transition-fast);
+}
+.btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
+
+/* Loading */
+.loading-wrap { text-align: center; padding: 3.5rem 0; }
+.spinner {
+  width: 40px; height: 40px; border: 3px solid var(--border);
+  border-top-color: var(--primary); border-radius: 50%;
+  animation: gfspin 1s linear infinite; margin: 0 auto 1.2rem;
+}
+@keyframes gfspin { to { transform: rotate(360deg); } }
+
+/* Results */
+.stage-hero {
+  border-radius: var(--radius-md); padding: 1.1rem 1.3rem; margin-bottom: 1.3rem;
+}
+.stage-label {
+  font-size: .68rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; margin-bottom: .35rem;
+}
+.stage-name { font-family: var(--font-H); font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: .45rem; }
+.stage-desc { font-size: .83rem; color: var(--text-muted); line-height: 1.65; }
+
+/* Maturity progression */
+.maturity { display: flex; align-items: center; margin-bottom: .5rem; }
+.m-node {
+  border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; font-weight: 600;
+}
+.m-line { flex: 1; height: 2px; }
+.m-labels { display: flex; margin-bottom: 1.3rem; }
+.m-label { flex: 1; font-size: .65rem; text-align: center; padding: 0 2px; }
+
+/* Results text */
+.res-label {
+  font-size: .68rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--text-dim); margin-bottom: .55rem; display: block;
+}
+.res-p { font-size: .86rem; color: var(--text); line-height: 1.7; margin-bottom: .6rem; }
+.res-p-mu { font-size: .83rem; color: var(--text-muted); line-height: 1.65; margin-bottom: .5rem; }
+
+/* Recommendation card */
+.rec-card {
+  border: 1.5px solid var(--primary-border); border-radius: var(--radius-md);
+  padding: 1.2rem; margin-top: 1rem;
+}
+.rec-track { font-size: .68rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: .1em; margin-bottom: .4rem; }
+.rec-module { font-family: var(--font-H); font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: .2rem; }
+.rec-reason { font-size: .82rem; color: var(--text-muted); line-height: 1.6; margin-bottom: .9rem; }
+.rec-divider { height: 1px; background: var(--border); margin-bottom: .9rem; }
+.cta-row { display: flex; gap: .7rem; flex-wrap: wrap; align-items: center; }
+
+/* CTA buttons */
+.btn-wa {
+  display: inline-flex; align-items: center; gap: .45rem;
+  background: var(--primary); color: #fff; text-decoration: none;
+  padding: .72rem 1.3rem; border-radius: var(--radius-sm);
+  font-family: var(--font-B); font-size: .86rem; font-weight: 700;
+  transition: background var(--transition-fast);
+}
+.btn-wa:hover { background: var(--primary-hover); }
+.btn-sec {
+  display: inline-flex; align-items: center;
+  color: var(--primary); text-decoration: none;
+  padding: .72rem 1.1rem; border-radius: var(--radius-sm);
+  font-family: var(--font-B); font-size: .84rem; font-weight: 600;
+  border: 1.5px solid var(--primary-border); transition: border-color var(--transition-fast);
+}
+.btn-sec:hover { border-color: var(--primary); }
+.btn-ghost {
+  background: none; border: none; cursor: pointer;
+  font-family: var(--font-B); font-size: .78rem; color: var(--text-dim);
+  padding: .72rem .2rem; transition: color var(--transition-fast);
+}
+.btn-ghost:hover { color: var(--text-muted); }
+
+.wa-icon { width: 14px; height: 14px; fill: #fff; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="navbar" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo" aria-label="Nudgeplus home"><img src="image/Nudgeplus_transparent.png" alt="Nudgeplus" class="logo-img"></a>
+    <div class="navr">
+      <a href="services.html" class="nl">Services</a>
+      <a href="academy.html" class="nl">Academy</a>
+      <a href="gap-finder.html" class="nl active" aria-current="page">Gap Finder</a>
+      <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%20Academy%2C%0A%0ATrack%3A%20%5BA%20%2F%20B%20%2F%20C%5D%0AModule%3A%20%5B...%5D%0AFormat%3A%20%5Bin-person%20%2F%20online%20%2F%20in-house%5D" class="ncta" target="_blank" rel="noopener">Book a Session</a>
+    </div>
+  </div>
+</nav>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%20Academy%2C%20I%27d%20like%20to%20book%20a%20training%20session." class="wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.565 4.14 1.545 5.875L.057 23.862l6.155-1.607A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-5.022-1.38l-.36-.214-3.732.975.999-3.637-.235-.374A9.788 9.788 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182c5.428 0 9.818 4.391 9.818 9.818 0 5.428-4.39 9.818-9.818 9.818z"/></svg>
+  Book a Session
+</a>
+
+<!-- GAP FINDER APP -->
+<section id="gapfinder">
+  <div class="container">
+    <div class="gf-wrap">
+      <div class="gf-card">
+        <div id="screen"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer aria-label="Site footer">
+  <div class="container">
+    <div class="ftgrid">
+      <div>
+        <a href="index.html" class="logo footer-logo" aria-label="Nudgeplus home"><img src="image/Nudgeplus_transparent.png" alt="Nudgeplus" class="logo-img"></a>
+        <p class="ftdesc">Nudgeplus Academy — Indonesia's behavioral science training. Part of Nudgeplus: Research · Consultancy · Training. Since 2019.</p>
+        <p style="margin-top:1rem;font-size:0.85rem"><a href="mailto:info@nudgeplus.net" style="color:#ffffff">info@nudgeplus.net</a></p>
+      </div>
+      <div class="fc">
+        <h4>Academy</h4>
+        <ul>
+          <li><a href="academy.html#tracks">Track A · Self Development</a></li>
+          <li><a href="academy.html#tracks">Track B · Company Growth</a></li>
+          <li><a href="academy.html#tracks">Track C · Public Policy</a></li>
+          <li><a href="academy.html#offers">Training Formats</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Nudgeplus</h4>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="https://nudgeplus.net/about-us/">About Us</a></li>
+          <li><a href="services.html#projects">Projects</a></li>
+          <li><a href="https://nudgeplus.net/indonesia-personality-map/">Personality Map</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Insights</h4>
+        <ul>
+          <li><a href="https://nudgeplus.net/category/news/">News</a></li>
+          <li><a href="https://medium.com/nudgeplus">Articles (Medium)</a></li>
+          <li><a href="https://nudgeplus.net/youtube-channel/">YouTube</a></li>
+          <li><a href="mailto:info@nudgeplus.net">info@nudgeplus.net</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <div class="container fbot-inner">
+      <span class="fbcopy">© 2026 Nudgeplus Academy · nudgeplus.net/gap-finder · Jakarta · Surabaya · London</span>
+      <div style="display:flex;gap:1.2rem"><span class="fbloc">info@nudgeplus.net</span><span class="fbloc">wa.me/447729735806</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+  const navbar = document.getElementById('navbar');
+  if (window.scrollY > 20) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// ── BRAND ────────────────────────────────────
+const AC = '#2d8a85', AM = '#e68400'
+const TN = {
+  A: 'Track A — Self Development',
+  B: 'Track B — Company Growth',
+  C: 'Track C — Effective Public Policy'
+}
+
+// ── STAGES ───────────────────────────────────
+const STAGES = [
+  {
+    n: 1, name: 'Reactive', col: '#C0392B', bg: 'rgba(192,57,43,.08)', range: [5, 9],
+    plain: 'Your team jumps to solutions before fully understanding the problem. This is very common — most teams do it. The result is that well-intentioned effort goes into work that does not change much.',
+    gap: 'The missing step: getting specific about exactly what you want people to do differently, then finding the real reason they are not doing it before designing anything.',
+    next: 'The shift to Stage 2 is not about learning new tools — it is about building one habit: pausing to define the specific behaviour before designing a solution.'
+  },
+  {
+    n: 2, name: 'Aware', col: '#BA7517', bg: 'rgba(186,117,23,.08)', range: [10, 15],
+    plain: 'Your team does some investigation before designing solutions, which puts you ahead of most. But the process is inconsistent — sometimes you dig deep, sometimes you assume. Results vary from project to project.',
+    gap: 'The missing step: a consistent way of finding the real reason a behaviour is not happening — and then picking a solution that actually addresses that specific reason.',
+    next: 'You have good instincts. The next step is turning those instincts into a repeatable process so every project gets the same quality of diagnosis.'
+  },
+  {
+    n: 3, name: 'Methodical', col: '#1E6B8A', bg: 'rgba(30,107,138,.08)', range: [16, 21],
+    plain: 'Your team investigates before designing, and chooses solutions based on what you find. Your work is well-designed and produces better results than most. One gap remains: your tests do not include a comparison group, so you cannot be fully sure what is actually working.',
+    gap: 'The missing step: running a small controlled test before scaling — so you can tell whether your solution caused the improvement, or whether something else did.',
+    next: 'You are close to the complete picture. One extra step in how you test would make your results significantly more reliable and defensible.'
+  },
+  {
+    n: 4, name: 'Complete', col: '#1E8449', bg: 'rgba(30,132,73,.08)', range: [22, 25],
+    plain: 'Your team runs the full process well: you are specific about what you want to change, you find out the real reason it is not happening, you pick solutions that match that reason, you test them properly, and you use what you learn to improve.',
+    gap: 'At this level, the most common gap is making sure this way of working is built into how your whole team operates — not just something one or two people know how to do.',
+    next: 'You are already at the highest level. The next step is building this into your standard process so it continues when people change roles.'
+  }
+]
+
+// ── QUESTIONS ────────────────────────────────
+const QS = [
+  {
+    id: 'q0',
+    step: 'Question 1 of 5',
+    ctx: 'Think about the last time you or your team tried to get people to do something differently — follow a rule, change a habit, use a new system, attend a programme, anything.',
+    q: 'When you decided what the goal was, how specific did you get?',
+    opts: [
+      { t: 'We agreed on a general direction — for example, "we want people to be healthier" or "we want better compliance."', s: 1 },
+      { t: 'We named the behaviour we wanted — for example, "we want people to wash their hands" or "we want staff to attend the training."', s: 2 },
+      { t: 'We got very specific — exactly what we wanted people to do, in what situation, how often, and how we would know if it changed.', s: 5 }
+    ]
+  },
+  {
+    id: 'q1',
+    step: 'Question 2 of 5',
+    ctx: null,
+    q: 'Before deciding on a solution, how did your team figure out WHY people were not already doing the desired thing?',
+    opts: [
+      { t: 'We made our best guess — experience tells us it is usually a lack of awareness or motivation.', s: 1 },
+      { t: 'We asked people why they were not doing it, or looked at data we already had.', s: 2 },
+      { t: 'We went and watched what actually happens in the real situation — and looked for everything that might be making it harder than it needs to be.', s: 5 }
+    ]
+  },
+  {
+    id: 'q2',
+    step: 'Question 3 of 5',
+    ctx: null,
+    q: 'Once you understood the problem, how did your team decide on a solution?',
+    opts: [
+      { t: 'We used something that worked in a similar situation before, or looked at what others do.', s: 2 },
+      { t: 'We came up with ideas together and picked the most practical one.', s: 2 },
+      { t: 'We chose based on WHY people were not doing it — because the reason tells you what kind of solution will actually work.', s: 5 }
+    ]
+  },
+  {
+    id: 'q3',
+    step: 'Question 4 of 5',
+    ctx: null,
+    q: 'Before rolling your solution out to everyone, what did your team do?',
+    opts: [
+      { t: 'We launched it. It looked good and we needed to move quickly.', s: 1 },
+      { t: 'We tried it with a small group first and checked whether people liked it.', s: 2 },
+      { t: 'We tried it with one group AND had a similar group that did not get it — so we could compare results and see whether our solution actually made the difference.', s: 5 }
+    ]
+  },
+  {
+    id: 'q4',
+    step: 'Question 5 of 5',
+    ctx: null,
+    q: 'After running your solution, how do you know whether it worked — and what do you do if the results are disappointing?',
+    opts: [
+      { t: 'We count how many people participated. If disappointing, we promote it more or run it longer.', s: 1 },
+      { t: 'We ask people whether they found it useful. If disappointing, we adjust based on their feedback.', s: 2 },
+      { t: 'We check whether the specific thing we set out to change actually changed. If disappointing, we treat it as a clue — what does this tell us about what we got wrong? Then we fix that first.', s: 5 }
+    ]
+  }
+]
+
+const LMSGS = ['Reading your answers...', 'Working out your gap...', 'Writing your report...']
+
+// ── STATE ────────────────────────────────────
+let step = 0, ANS = {}, CTX = { role: '', sector: '', challenge: '' }
+const $ = id => document.getElementById(id)
+const show = html => $('screen').innerHTML = html
+
+function calcScore() {
+  return QS.reduce((a, q) => {
+    const o = q.opts.find(o => o.t === ANS[q.id])
+    return a + (o ? o.s : 0)
+  }, 0)
+}
+function getStage(s) {
+  return STAGES.find(st => s >= st.range[0] && s <= st.range[1]) || STAGES[0]
+}
+function goTo(s) { step = s; render() }
+
+function render() {
+  if (step === 0) showWelcome()
+  else if (step === 1) showContext()
+  else if (step >= 2 && step <= 6) showQ(step - 2)
+  else if (step === 7) showLoading()
+}
+
+// ── WELCOME ──────────────────────────────────
+function showWelcome() {
+  show(`
+  <p style="font-size:1.85rem;font-family:var(--font-H);font-weight:800;letter-spacing:-.03em;line-height:1.1;color:var(--text);margin-bottom:.9rem">
+    Trying to get people to do something differently —
+    <em style="font-style:normal;color:${AC}">and it is not working?</em>
+  </p>
+  <p style="font-size:.95rem;color:var(--text-muted);line-height:1.72;margin-bottom:1.2rem;max-width:500px">
+    Most efforts to change how people behave fall short — not because of bad intentions,
+    but because one step in the process is missing. Answer five quick questions
+    and find out which step that is.
+  </p>
+  <div class="side-note">
+    No background in behavioural science needed.
+    The questions describe real situations that anyone who has tried
+    to change what people do will immediately recognise.
+  </div>
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-card-n">5 questions</div><div class="stat-card-l">About 3 minutes</div></div>
+    <div class="stat-card"><div class="stat-card-n">Plain language</div><div class="stat-card-l">No jargon at all</div></div>
+    <div class="stat-card"><div class="stat-card-n">Free report</div><div class="stat-card-l">Specific to your situation</div></div>
+  </div>
+  <button class="btn-primary" onclick="goTo(1)">
+    <svg class="wa-icon" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M13 5H11v8l7-4v-2l-5 3z"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/></svg>
+    Find out what's missing →
+  </button>
+  <p style="font-size:.72rem;color:var(--text-dim);margin-top:.9rem">No sign-up required</p>`)
+}
+
+// ── CONTEXT ───────────────────────────────────
+function showContext() {
+  const ROLES = [
+    'Individual / professional', 'Manager or team lead',
+    'Senior leader or director', 'Government official',
+    'NGO or development worker', 'Student or researcher',
+    'HR or learning professional', 'Consultant or adviser'
+  ]
+  const SECTS = [
+    'Corporate or business', 'Government',
+    'NGO or development', 'Health or public health',
+    'Education', 'Financial services', 'Other'
+  ]
+  show(`
+  <div class="prog"><div class="prog-f" style="width:16%"></div></div>
+  <p style="font-size:1.1rem;font-family:var(--font-H);font-weight:700;color:var(--text);margin-bottom:.4rem">First, a little about you</p>
+  <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:1.2rem;line-height:1.6">
+    This makes your report specific rather than generic. There are no right or wrong answers here.
+  </p>
+  <div class="ctx-grid">
+    <div>
+      <span class="field-lbl">Your role</span>
+      <select id="f-role" onchange="CTX.role=this.value">
+        <option value="">Select...</option>
+        ${ROLES.map(r => `<option value="${r}"${CTX.role===r?' selected':''}>${r}</option>`).join('')}
+      </select>
+    </div>
+    <div>
+      <span class="field-lbl">Your context</span>
+      <select id="f-sect" onchange="CTX.sector=this.value">
+        <option value="">Select...</option>
+        ${SECTS.map(s => `<option value="${s}"${CTX.sector===s?' selected':''}>${s}</option>`).join('')}
+      </select>
+    </div>
+  </div>
+  <span class="field-lbl">What are you trying to get people to do differently?</span>
+  <textarea id="f-ch" rows="2"
+    placeholder="Just describe it simply — e.g. get my team to follow safety rules / increase attendance at our programme / get people to stop wasting plastic / change my own study habits"
+    oninput="CTX.challenge=this.value">${CTX.challenge}</textarea>
+  <p style="font-size:.72rem;color:var(--text-dim);margin:.45rem 0 1.3rem;line-height:1.5">
+    One sentence is fine. Even "I am not sure yet — I just know something is not working" is a valid answer.
+  </p>
+  <div class="nav">
+    <button class="btn-back" onclick="goTo(0)">← Back</button>
+    <button class="btn-next" onclick="fromContext()">Continue →</button>
+  </div>`)
+}
+
+function fromContext() {
+  CTX.role    = $('f-role').value
+  CTX.sector  = $('f-sect').value
+  CTX.challenge = $('f-ch').value.trim()
+  if (!CTX.role || !CTX.sector || !CTX.challenge) {
+    alert('Please fill in all three fields — it only takes a second and makes your report much more useful.')
+    return
+  }
+  goTo(2)
+}
+
+// ── QUESTIONS ────────────────────────────────
+function showQ(qi) {
+  const q = QS[qi]
+  const pct = Math.round(((qi + 2) / 7) * 100)
+  const isLast = qi === QS.length - 1
+  const answered = !!ANS[q.id]
+
+  show(`
+  <div class="prog"><div class="prog-f" style="width:${pct}%"></div></div>
+  <span class="step-tag">${q.step}</span>
+  ${q.ctx ? `<div class="side-note">${q.ctx}</div>` : ''}
+  <p style="font-size:1.05rem;font-family:var(--font-H);font-weight:700;color:var(--text);line-height:1.35;margin-bottom:1.1rem">${q.q}</p>
+  <div class="opts">
+    ${q.opts.map(o => `
+    <button class="opt ${ANS[q.id] === o.t ? 'on' : ''}"
+      onclick="pickAns(${qi}, this)">
+      <div class="opt-dot"></div>
+      <div class="opt-text">${o.t}</div>
+    </button>`).join('')}
+  </div>
+  <div class="nav">
+    <button class="btn-back" onclick="goTo(${step - 1})">← Back</button>
+    <button class="btn-next"
+      onclick="${isLast ? 'runDiagnostic()' : `goTo(${step + 1})`}"
+      ${answered ? '' : 'disabled'}>
+      ${isLast ? 'See my results →' : 'Next →'}
+    </button>
+  </div>`)
+}
+
+function pickAns(qi, el) {
+  const text = el.querySelector('.opt-text').textContent
+  ANS[QS[qi].id] = text
+  showQ(qi)
+}
+
+// ── LOADING ───────────────────────────────────
+function showLoading() {
+  let mi = 0
+  show(`
+  <div class="loading-wrap">
+    <div class="spinner"></div>
+    <p style="font-family:var(--font-H);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.4rem"
+       id="lmsg">Reading your answers...</p>
+    <p style="font-size:.8rem;color:var(--text-muted)">Just a moment</p>
+  </div>`)
+  const iv = setInterval(() => {
+    mi = (mi + 1) % LMSGS.length
+    const el = $('lmsg')
+    if (el) el.textContent = LMSGS[mi]
+  }, 2500)
+  callApi(iv)
+}
+
+async function runDiagnostic() {
+  if (!QS.every(q => ANS[q.id])) return
+  goTo(7)
+}
+
+// ── API ───────────────────────────────────────
+async function callApi(iv) {
+  const score  = calcScore()
+  const stage  = getStage(score)
+  const ansText = QS.map((q, i) =>
+    `Q${i+1} (${q.step}): ${ANS[q.id] || 'no answer'}`
+  ).join('\n')
+
+  const prompt = `You are the Nudgeplus behaviour change report writer.
+Write a warm, plain-English, jargon-free personal report.
+
+WHO: ${CTX.role} in ${CTX.sector}
+WHAT THEY ARE TRYING TO DO: "${CTX.challenge}"
+THEIR STAGE: Stage ${stage.n} of 4 — ${stage.name}
+THEIR ANSWERS:
+${ansText}
+
+Rules:
+- Write like a thoughtful colleague, not a consultant
+- No jargon: say "the real reason people are not doing it" not "diagnosed barrier"
+- Say "a small test" not "controlled experiment"
+- Say "what you set out to change" not "target behaviour"
+- Say "solution" not "intervention"
+- Be specific to their challenge: "${CTX.challenge}"
+- Be honest and warm — do not over-praise
+- Keep each field short (see character guidance)
+
+Return ONLY valid JSON — no markdown, no code blocks:
+{
+  "opening": "<one warm sentence that names their situation as a ${CTX.role} trying to: ${CTX.challenge}>",
+  "what_this_means": "<two plain sentences: what does Stage ${stage.n} look like day-to-day for someone doing this kind of work>",
+  "the_gap": "<one specific sentence: what step is missing — in plain words, no jargon>",
+  "what_it_costs": "<one sentence: what does this cost them — concrete, relevant to: ${CTX.challenge}>",
+  "what_changes": "<two sentences: what their work would look like if this gap were filled — specific to their challenge>",
+  "one_thing": "<one practical thing they could do differently this week — plain language, immediately actionable, no jargon>",
+  "recommended_track": "<A for individual or personal, B for business or team, C for policy or government or NGO>",
+  "track_reason": "<one plain sentence on why this track fits their role and challenge>",
+  "module": "<e.g. C1, B2, A1>",
+  "module_name": "<the module name — e.g. Policy Insight, Smart Decisions, Bias Buster>",
+  "module_reason": "<one plain sentence: what they will actually be able to do after this session>"
+}`
+
+  let d = null
+  try {
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 900,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    })
+    const data = await resp.json()
+    d = JSON.parse(data.content[0].text.replace(/```json|```/g, '').trim())
+  } catch (e) {
+    const tr = CTX.sector.includes('Gov') || CTX.sector.includes('NGO') ? 'C'
+             : (CTX.role.includes('Manager') || CTX.role.includes('Senior') || CTX.role.includes('HR')) ? 'B'
+             : 'A'
+    d = {
+      opening: `You are working on a real and worthwhile challenge: ${CTX.challenge}.`,
+      what_this_means: stage.plain,
+      the_gap: stage.gap,
+      what_it_costs: 'This means time and effort goes into work that does not produce the change you were hoping for.',
+      what_changes: stage.next,
+      one_thing: 'Before your next solution, write down one specific sentence: exactly what do you want people to do, in what situation, and how would you know if it changed?',
+      recommended_track: tr,
+      track_reason: 'This track matches your role and the type of challenge you are working on.',
+      module: tr + '1',
+      module_name: tr === 'C' ? 'Policy Insight' : tr === 'B' ? 'Smart Decisions' : 'Bias Buster',
+      module_reason: 'This session addresses the gap your answers point to and gives you a working tool to use the following week.'
+    }
+  }
+
+  clearInterval(iv)
+  showResults(stage, score, d)
+}
+
+// ── RESULTS ───────────────────────────────────
+function showResults(stage, score, d) {
+  const wa = encodeURIComponent(
+    `Nudgeplus self-check results\n\n` +
+    `Role: ${CTX.role}\nContext: ${CTX.sector}\nChallenge: ${CTX.challenge}\n\n` +
+    `Stage: ${stage.n} of 4 — ${stage.name}\n` +
+    `Suggested starting point: ${d.module} — ${d.module_name}\n\n` +
+    `I would like to talk about training options.`
+  )
+
+  const barColor = s => s >= 17 ? '#1E8449' : s >= 12 ? '#1E6B8A' : s >= 8 ? '#BA7517' : '#C0392B'
+  const pct = Math.round((score / 25) * 100)
+
+  show(`
+  <!-- Stage hero -->
+  <div class="stage-hero" style="background:${stage.bg};border:1px solid ${stage.col}50">
+    <div class="stage-label" style="color:${stage.col}">Stage ${stage.n} of 4</div>
+    <div class="stage-name">${stage.name}</div>
+    <p class="stage-desc">${d.opening}</p>
+  </div>
+
+  <!-- Maturity progression -->
+  <div class="maturity">
+    ${STAGES.map((s, i) => `
+    ${i > 0 ? `<div class="m-line" style="background:${s.n <= stage.n ? s.col : 'var(--border)'}"></div>` : ''}
+    <div class="m-node" style="
+      width:${s.n === stage.n ? 38 : 26}px;
+      height:${s.n === stage.n ? 38 : 26}px;
+      background:${s.n <= stage.n ? s.col : '#fff'};
+      border:${s.n === stage.n ? `2px solid ${s.col}` : '1px solid var(--border)'};
+      font-size:${s.n === stage.n ? 13 : 10}px;
+      color:${s.n <= stage.n ? '#fff' : 'var(--text-dim)'}">
+      ${s.n}
+    </div>`).join('')}
+  </div>
+  <div class="m-labels">
+    ${STAGES.map(s => `
+    <div class="m-label" style="color:${s.n === stage.n ? s.col : 'var(--text-dim)'};font-weight:${s.n === stage.n ? 600 : 400}">
+      ${s.name}
+    </div>`).join('')}
+  </div>
+
+  <!-- Diagnosis -->
+  <span class="res-label">What your answers show</span>
+  <p class="res-p">${d.what_this_means}</p>
+
+  <div class="teal-box">
+    <div style="font-size:.68rem;font-weight:700;color:${AC};text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem">What's missing</div>
+    <p class="res-p" style="margin-bottom:.55rem">${d.the_gap}</p>
+    <p class="res-p-mu"><strong style="color:var(--text)">What this costs you:</strong> ${d.what_it_costs}</p>
+  </div>
+
+  <p class="res-p-mu" style="margin-top:.6rem">
+    <strong style="color:var(--text)">What changes when you fill this gap:</strong>
+    ${d.what_changes}
+  </p>
+
+  <!-- One thing to try -->
+  <div class="amber-box">
+    <div style="font-size:.68rem;font-weight:700;color:${AM};text-transform:uppercase;letter-spacing:.1em;margin-bottom:.45rem">One thing to try this week</div>
+    <p class="res-p">${d.one_thing}</p>
+  </div>
+
+  <!-- Recommendation -->
+  <div class="rec-card">
+    <div class="rec-track">${TN[d.recommended_track] || d.recommended_track}</div>
+    <div class="rec-module">${d.module} — ${d.module_name}</div>
+    <p class="rec-reason">${d.module_reason}</p>
+    <p class="res-p-mu">${d.track_reason}</p>
+    <div class="rec-divider"></div>
+    <div class="cta-row">
+      <a href="https://wa.me/447729735806?text=${wa}" target="_blank" rel="noopener" class="btn-wa">
+        <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.565 4.14 1.545 5.875L.057 23.862l6.155-1.607A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-5.022-1.38l-.36-.214-3.732.975.999-3.637-.235-.374A9.788 9.788 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182c5.428 0 9.818 4.391 9.818 9.818 0 5.428-4.39 9.818-9.818 9.818z"/>
+        </svg>
+        Talk to us about this
+      </a>
+      <a href="academy.html" target="_blank" rel="noopener" class="btn-sec">
+        Explore training →
+      </a>
+      <button class="btn-ghost"
+        onclick="step=0;ANS={};CTX={role:'',sector:'',challenge:''};render()">
+        Start over
+      </button>
+    </div>
+  </div>`)
+}
+
+// ── INIT ──────────────────────────────────────
+render()
+</script>
+</body>
+</html>
