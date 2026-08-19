@@ -1779,15 +1779,23 @@ footer {
 .ftgrid {
   display: grid;
   grid-template-columns: 1.8fr 1fr 1fr 1fr;
-  gap: 3rem;
+  gap: 3rem 3rem;
+  row-gap: 2.5rem;
   align-items: start;
   margin-bottom: 3rem;
+}
+
+.ft-brand {
+  grid-row: span 2;
 }
 
 @media (max-width: 768px) {
   .ftgrid {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+  }
+  .ft-brand {
+    grid-row: auto;
   }
 }
 
@@ -1805,7 +1813,7 @@ footer {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #ffffff;
+  color: var(--secondary);
   margin-bottom: 1.2rem;
 }
 
@@ -1825,6 +1833,19 @@ footer {
 
 .fc a:hover {
   color: #ffffff;
+}
+
+.fc a.fc-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.fc a.fc-social svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  flex-shrink: 0;
 }
 
 .fbot {
@@ -3314,6 +3335,42 @@ footer {
   font-size: 0.8rem;
   color: var(--text-muted);
   line-height: 1.55;
+}
+
+.event-body {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.event-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.event-logo img {
+  max-width: 68%;
+  max-height: 68%;
+  object-fit: contain;
+}
+
+.event-logo.event-logo-ph {
+  font-family: var(--font-H);
+  font-weight: 800;
+  font-size: 0.68rem;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  background: var(--primary-light);
+  border-color: var(--primary-border);
 }
 
 .event-tags {
