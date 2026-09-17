@@ -23,6 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="homepage2.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide-core.min.css">
 </head>
 <body>
 
@@ -200,28 +201,46 @@
 <div class="awards-wrapper">
   <div class="container">
     <div class="awards-label">★ Recognition &amp; Grants</div>
-    <div class="awards-grid">
+  </div>
+  <div class="container">
+    <div class="splide grants-splide" id="grantsSplide" aria-label="Recognition &amp; Grants timeline">
+      <div class="splide__track">
+        <ul class="splide__list">
 
-      <!-- Card 1: Best Paper Award -->
-      <div class="award-card green sr">
-        <div class="award-card-icon" aria-hidden="true">🏆</div>
-        <div class="award-badge">IRSA 2022</div>
-        <div class="award-title">IRSA-BKF Best Paper Award 2022</div>
-        <p class="award-desc">“Nudging people to handwash during the pandemic” — peer-reviewed research demonstrating measurable behaviour change through nudge interventions during COVID-19.</p>
-        <a class="award-doi" href="https://doi.org/10.1111/asap.12329" target="_blank" rel="noopener">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          DOI: 10.1111/asap.12329
-        </a>
+          <li class="splide__slide grants-item">
+            <div class="grants-year">2021</div>
+            <div class="grants-dot-row"><span class="grants-dot" aria-hidden="true"></span></div>
+            <div class="grants-title">British Embassy Grant 2021</div>
+            <p class="grants-desc">Nudge implementation during covid-19 in collaboration with East Java Province.</p>
+            <a class="grants-more" href="https://doi.org/10.1111/asap.12329" target="_blank" rel="noopener">Read More →</a>
+          </li>
+
+          <li class="splide__slide grants-item">
+            <div class="grants-year">2022</div>
+            <div class="grants-dot-row"><span class="grants-dot" aria-hidden="true"></span></div>
+            <div class="grants-title">IRSA-BKF Best Paper Award 2022</div>
+            <p class="grants-desc">"Nudging people to handwash during the pandemic" — peer-reviewed research demonstrating measurable behaviour change through nudge interventions during COVID-19.</p>
+            <a class="grants-more" href="https://doi.org/10.1111/asap.12329" target="_blank" rel="noopener">Read More →</a>
+          </li>
+
+          <li class="splide__slide grants-item">
+            <div class="grants-year">2023</div>
+            <div class="grants-dot-row"><span class="grants-dot" aria-hidden="true"></span></div>
+            <div class="grants-title">International Research Grant - British Academy Research Fund 2023</div>
+            <p class="grants-desc">Behavioral Science for Green Financial Decision. Collaborative research with the University of Sheffield and University of Lincoln — investigating behavioral barriers to green finance adoption in Indonesia and testing nudge-based interventions to shift financial behaviour toward sustainable products.</p>
+            <a class="grants-more" href="https://nudgeplus.net/about-us/" target="_blank" rel="noopener">Read More →</a>
+          </li>
+
+          <li class="splide__slide grants-item">
+            <div class="grants-year">2025</div>
+            <div class="grants-dot-row"><span class="grants-dot" aria-hidden="true"></span></div>
+            <div class="grants-title">SADAR GOWES National Campaign 2025</div>
+            <p class="grants-desc">Dual-audience behavioural safety campaign for motorists and cyclists, launched with Kemenhub on World Bicycle Day — 120K+ social media reach with open-licensed public campaign materials.</p>
+            <a class="grants-more" href="https://nudgeplus.net/about-us/" target="_blank" rel="noopener">Read More →</a>
+          </li>
+
+        </ul>
       </div>
-
-      <!-- Card 2: Research Grant -->
-      <div class="award-card orange sr">
-        <div class="award-card-icon" aria-hidden="true">📊</div>
-        <div class="award-badge">GRANT 2026</div>
-        <div class="award-title">IRSA Research Support Grant 2026</div>
-        <p class="award-desc">“Reframing Rural Careers: Nudge-based Intervention for Young Workers in Agriculture” — a new field study exploring how behavioural science can reshape career perception among rural youth.</p>
-      </div>
-
     </div>
   </div>
 </div>
@@ -665,6 +684,7 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 <script>
 window.addEventListener('scroll', function() {
   const navbar = document.getElementById('navbar');
@@ -752,6 +772,47 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.07, rootMargin: '0px 0px -24px 0px' });
 
 document.querySelectorAll('.sr').forEach(el => io.observe(el));
+
+/* GRANTS TIMELINE — Splide carousel */
+(function initGrantsSplide() {
+  const el = document.getElementById('grantsSplide');
+  if (!el || typeof Splide === 'undefined') return;
+
+  const slideCount = el.querySelectorAll('.splide__slide').length;
+
+  // Nav (arrows / pagination / drag / autoplay) turns on per-breakpoint
+  // whenever that breakpoint's perPage can't show every slide at once —
+  // so it activates on mobile/tablet even if the desktop view fits them all.
+  function navFor(perPage, extra) {
+    const needsNav = perPage < slideCount;
+    return Object.assign({
+      perPage: perPage,
+      arrows: needsNav,
+      pagination: needsNav,
+      drag: needsNav,
+      rewind: needsNav,
+      autoplay: needsNav,
+    }, extra || {});
+  }
+
+  const base = navFor(4, { padding: { right: '1rem' } });
+
+  const splide = new Splide(el, Object.assign({
+    type: 'slide',
+    perMove: 1,
+    gap: '2.5rem',
+    interval: 4000,
+    pauseOnHover: true,
+    pauseOnFocus: true,
+    breakpoints: {
+      1100: navFor(3, { padding: { right: '1rem' } }),
+      760: navFor(2, { padding: { right: '1.5rem' } }),
+      560: navFor(1, { padding: { right: '2.5rem' } }),
+    },
+  }, base));
+
+  splide.mount();
+})();
 
 /* PROOF — pinned scroll-through cards */
 (function initProofScroll() {

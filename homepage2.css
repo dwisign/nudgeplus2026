@@ -1253,6 +1253,152 @@ h1 em {
   gap: 0.6rem;
 }
 
+/* GRANTS TIMELINE — Splide carousel, Nudgeplus brand */
+.grants-splide {
+  padding-bottom: 4rem;
+}
+
+.grants-splide .splide__list {
+  padding: 2.2rem 0 0.5rem;
+  align-items: stretch;
+}
+
+.grants-splide .splide__slide {
+  position: relative;
+}
+
+.grants-year {
+  font-family: var(--font-H);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.grants-dot-row {
+  position: relative;
+  width: calc(100% + 2.5rem);
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 1.8rem;
+}
+
+.grants-dot {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--secondary);
+  border: 3px solid var(--surface);
+  box-shadow: 0 0 0 1px var(--secondary-border);
+}
+
+.grants-title {
+  font-family: var(--font-H);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.35;
+  margin-bottom: 0.9rem;
+}
+
+.grants-desc {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.grants-more {
+  display: inline-block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--primary);
+  transition: color var(--transition-fast);
+}
+
+.grants-more:hover {
+  color: var(--primary-hover);
+}
+
+/* Splide arrows — Nudgeplus brand, bottom-right corner */
+.grants-splide .splide__arrows {
+  position: absolute;
+  right: 0;
+  bottom: -3.4rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.grants-splide .splide__arrow {
+  position: static;
+  transform: none;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  width: 42px;
+  height: 42px;
+  opacity: 1;
+  transition: all var(--transition-fast);
+}
+
+.grants-splide .splide__arrow:hover:not(:disabled) {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.grants-splide .splide__arrow:hover:not(:disabled) svg {
+  fill: #fff;
+}
+
+.grants-splide .splide__arrow svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--primary);
+  transition: fill var(--transition-fast);
+}
+
+.grants-splide .splide__arrow--prev svg {
+  transform: scaleX(-1);
+}
+
+.grants-splide .splide__arrow:disabled {
+  opacity: 0.35;
+}
+
+/* Splide pagination — Nudgeplus brand, orange only */
+.grants-splide .splide__pagination {
+  position: static;
+  margin-top: 1.5rem;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.grants-splide .splide__pagination__page {
+  width: 7px;
+  height: 7px;
+  background: var(--secondary-light);
+  border: none;
+  opacity: 1;
+  margin: 0;
+  transition: all var(--transition-fast);
+}
+
+.grants-splide .splide__pagination__page.is-active {
+  background: var(--secondary);
+  width: 22px;
+  border-radius: 4px;
+  transform: none;
+}
+
+@media (max-width: 900px) {
+  .grants-splide .splide__arrows {
+    bottom: -3rem;
+  }
+}
+
 /* .awards-label::after {
   content: '';
   flex: 1;
