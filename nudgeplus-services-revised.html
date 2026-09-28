@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nudgeplus | Behavioural Science Research &amp; Consultancy — Indonesia</title>
+<meta name="description" content="Indonesia's pioneering behavioural science consultancy. We diagnose why people don't behave the way you need — then change it. KALIBER-powered. Trusted by British Embassy, Jasa Raharja, Plan International, Kemenhub. Jakarta · Surabaya · London.">
+<link rel="canonical" href="https://nudgeplus.net/services/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nudgeplus | Behavioural Science Research &amp; Consultancy — Indonesia">
+<meta property="og:description" content="We diagnose why people aren't behaving the way you need — then change it. 30% COVID compliance uplift. 61% attendance increase. IRSA-BKF Award 2022. KALIBER-powered.">
+<meta property="og:url" content="https://nudgeplus.net/services/">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="id_ID">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nudgeplus | Behavioural Science Research &amp; Consultancy">
+<meta name="twitter:description" content="Diagnose why people aren't behaving the way you need. Then change it. KALIBER-powered. Jakarta · Surabaya · London.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap"></noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Nudgeplus",
+  "url": "https://nudgeplus.net",
+  "description": "Indonesia's pioneer behavioural science consultancy. Research, consultancy, and field experiments powered by KALIBER.",
+  "email": "info@nudgeplus.net",
+  "telephone": "+447729735806",
+  "areaServed": ["Indonesia","United Kingdom"],
+  "address": [
+    {"@type":"PostalAddress","addressLocality":"Jakarta","addressCountry":"ID"},
+    {"@type":"PostalAddress","addressLocality":"Surabaya","addressCountry":"ID"},
+    {"@type":"PostalAddress","addressLocality":"London","addressCountry":"GB"}
+  ],
+  "award": ["IRSA-BKF Best Paper Award 2022","IRSA Research Support Grant 2026"],
+  "sameAs": ["https://medium.com/nudgeplus","https://www.linkedin.com/company/nudgeplus/"]
+}
+</script>
+
+<style>
+/* ── DESIGN TOKENS ─────────────────────────────────────── */
+:root {
+  --ink:       #16221e;
+  --ink-2:     #475569;
+  --ink-3:     #94a3b8;
+  --paper:     #ffffff;
+  --paper-2:   #f1f5f9;
+  --teal:      #2d8a85;
+  --teal-lt:   rgba(45, 138, 133, 0.08);
+  --teal-dk:   #19524f;
+  --amber:     #e68400;
+  --amber-lt:  rgba(230, 132, 0, 0.08);
+  --red:       #b03030;
+  --border:    rgba(15, 23, 42, 0.08);
+  --font-h:    'Inter', sans-serif;
+  --font-b:    'Inter', sans-serif;
+  --font-em:   'Instrument Serif', serif;
+  --radius:    0px;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 10px 25px -5px rgba(15, 23, 42, 0.04);
+  --max:       1160px;
+  --wide:      1340px;
+}
+
+/* ── RESET & BASE ──────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-b);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+abbr[title] { text-decoration: underline dotted var(--ink-3); cursor: help; }
+
+/* ── STICKY NAV ────────────────────────────────────────── */
+.sticky-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(247,248,246,0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 56px;
+  transform: translateY(-100%);
+  transition: transform .3s ease;
+}
+.sticky-nav.visible { transform: translateY(0); }
+.nav-logo {
+  font-family: var(--font-h);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -.3px;
+}
+.nav-logo span { color: var(--teal); }
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: color .15s;
+}
+.nav-links a:hover { color: var(--teal); }
+.nav-links a.nav-active {
+  background: var(--teal-lt);
+  color: var(--teal-dk);
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+.nav-links a.nav-active:hover { color: var(--teal-dk); }
+.nav-cta-btn {
+  background: var(--teal);
+  color: #fff;
+  font-family: var(--font-b);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .15s;
+}
+.nav-cta-btn:hover { background: var(--teal-dk); }
+
+/* ── FLOATING WA BUTTON ───────────────────────────────── */
+.wa-float {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  z-index: 90;
+  width: 52px; height: 52px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+  transition: transform .2s;
+}
+.wa-float:hover { transform: scale(1.08); }
+.wa-float svg { width: 28px; height: 28px; fill: #fff; }
+
+/* ── LAYOUT UTILITIES ─────────────────────────────────── */
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.container--wide {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+section { padding: 128px 0; }
+section + section { border-top: 1px solid var(--border); }
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+h1, h2, h3, h4 { font-family: var(--font-h); line-height: 1.2; }
+h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: var(--ink); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+h3 { font-size: 1.15rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+h1 em, h2 em, h3 em {
+  font-family: var(--font-em);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--teal);
+}
+p { color: var(--ink-2); max-width: 68ch; }
+
+.tag {
+  display: inline-block;
+  background: var(--teal-lt);
+  color: var(--teal-dk);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+.tag--amber { background: var(--amber-lt); color: var(--amber); }
+
+/* ── BUTTONS ──────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-b);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background .15s, color .15s, transform .15s;
+  cursor: pointer;
+  border: none;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn--primary {
+  background: var(--teal);
+  color: #fff;
+}
+.btn--primary:hover { background: var(--teal-dk); }
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--border);
+}
+.btn--ghost:hover { border-color: var(--ink-3); }
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 28px; }
+
+/* ── HERO ─────────────────────────────────────────────── */
+#hero {
+  padding: 120px 0 72px;
+  background: var(--paper);
+}
+.hero-badge-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.hero-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-3);
+  background: var(--paper-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 12px;
+}
+.hero-badge .icon { margin-right: 4px; }
+#hero h1 {
+  margin-bottom: 20px;
+  max-width: 22ch;
+}
+#hero h1 em {
+  font-family: var(--font-em);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--teal);
+}
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--ink-2);
+  max-width: 58ch;
+  margin-bottom: 0;
+}
+.hero-sub strong { color: var(--ink); font-weight: 600; }
+
+/* ── PROOF STRIP ──────────────────────────────────────── */
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 48px;
+  background: #fff;
+  box-shadow: var(--shadow-card);
+}
+.proof-cell {
+  padding: 22px 20px;
+  border-right: 1px solid var(--border);
+}
+.proof-cell:last-child { border-right: none; }
+.proof-num {
+  font-family: var(--font-h);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.proof-label {
+  font-size: 12px;
+  color: var(--ink-3);
+  line-height: 1.4;
+  max-width: 100%;
+}
+.proof-label strong { color: var(--ink-2); display: block; font-weight: 500; font-size: 11px; margin-top: 3px; }
+
+/* ── TESTIMONIALS (inline) ───────────────────────────── */
+.testi-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+.testi-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-card);
+}
+.testi-stars { color: var(--amber); font-size: 13px; margin-bottom: 10px; }
+.testi-quote {
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.testi-avatar {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--teal-lt);
+  color: var(--teal-dk);
+  font-family: var(--font-h);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.testi-name { font-size: 12px; font-weight: 600; color: var(--ink); line-height: 1.3; }
+.testi-role { font-size: 11px; color: var(--ink-3); }
+
+/* ── AWARDS ───────────────────────────────────────────── */
+#awards { padding: 40px 0; background: var(--paper-2); }
+.awards-inner {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.award-card {
+  flex: 1;
+  min-width: 260px;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  box-shadow: var(--shadow-card);
+}
+.award-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.award-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--teal); margin-bottom: 3px; }
+.award-title { font-size: 13px; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 4px; }
+.award-desc { font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+.award-doi { font-size: 11px; color: var(--teal); text-decoration: none; margin-top: 6px; display: inline-block; }
+.award-doi:hover { text-decoration: underline; }
+
+/* ── CLIENT LOGOS ─────────────────────────────────────── */
+#logos { padding: 48px 0; }
+.logos-label { font-size: 12px; font-weight: 500; color: var(--ink-3); margin-bottom: 20px; }
+.logos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.logo-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 6px 14px 6px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+.logo-img {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  object-fit: contain;
+  background: var(--paper-2);
+  flex-shrink: 0;
+}
+.logo-initials {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--teal-lt);
+  color: var(--teal-dk);
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── KALIBER ──────────────────────────────────────────── */
+#kaliber { background: var(--ink); color: #fff; }
+#kaliber h2 { color: #fff; }
+#kaliber p { color: rgba(255,255,255,.7); }
+.kaliber-wordmark {
+  font-family: var(--font-h);
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+.kaliber-wordmark span { color: var(--teal); }
+.kaliber-wordmark span.dim { color: rgba(255,255,255,.25); }
+.kaliber-intro {
+  max-width: 60ch;
+  font-size: 1rem;
+  color: rgba(255,255,255,.75);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+.kaliber-cycle {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.k-step {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  padding: 14px 10px;
+  text-align: center;
+}
+.k-step-letter {
+  font-family: var(--font-h);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.k-step-name {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,255,255,.85);
+  line-height: 1.3;
+  margin-bottom: 5px;
+}
+.k-step-desc {
+  font-size: 10px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.4;
+}
+.kaliber-ip {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 12px;
+  color: rgba(255,255,255,.5);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.kaliber-detail-toggle {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 6px;
+  color: rgba(255,255,255,.6);
+  font-family: var(--font-b);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.kaliber-detail-toggle:hover { border-color: rgba(255,255,255,.5); color: #fff; }
+.kaliber-detail { display: none; margin-top: 24px; }
+.kaliber-detail.open { display: block; }
+.k-accordion-item {
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding: 14px 0;
+}
+.k-accordion-item:last-child { border-bottom: none; }
+.k-acc-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  cursor: pointer;
+}
+.k-acc-letter { font-family: var(--font-h); font-size: 1.1rem; font-weight: 700; color: var(--teal); min-width: 16px; }
+.k-acc-name { font-size: 14px; font-weight: 600; color: rgba(255,255,255,.9); flex: 1; }
+.k-acc-sub { font-size: 11px; color: rgba(255,255,255,.35); }
+.k-acc-chevron { font-size: 12px; color: rgba(255,255,255,.3); transition: transform .2s; }
+.k-acc-header.open .k-acc-chevron { transform: rotate(90deg); }
+.k-acc-body { display: none; padding: 10px 0 4px 28px; font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.7; }
+.k-acc-body.open { display: block; }
+
+/* ── FORMATS ──────────────────────────────────────────── */
+#formats { background: var(--paper); }
+.formats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+.format-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.format-card.featured {
+  box-shadow: 0 0 0 1.5px var(--teal), var(--shadow-card);
+}
+.format-badge {
+  position: absolute;
+  top: -11px; left: 20px;
+  background: var(--teal);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.format-num { font-size: 11px; font-weight: 600; color: var(--ink-3); margin-bottom: 8px; }
+.format-title { font-family: var(--font-h); font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.format-meta { font-size: 12px; color: var(--teal); font-weight: 600; margin-bottom: 14px; }
+.format-desc { font-size: 13px; color: var(--ink-2); line-height: 1.6; margin-bottom: 16px; }
+.format-list { list-style: none; margin-bottom: 16px; flex: 1; }
+.format-list li {
+  font-size: 12px;
+  color: var(--ink-2);
+  padding: 4px 0 4px 16px;
+  position: relative;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--paper-2);
+}
+.format-list li:last-child { border-bottom: none; }
+.format-list li::before { content: "→"; position: absolute; left: 0; color: var(--teal); font-size: 11px; }
+.format-suited { font-size: 11px; color: var(--ink-3); }
+.format-suited strong { color: var(--ink-2); }
+.pricing-note {
+  background: var(--paper-2);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+.pricing-note strong { color: var(--ink); }
+.formats-cta {
+  text-align: center;
+  margin-top: 36px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.formats-cta p { margin: 0 auto 18px; font-size: 14px; color: var(--ink-2); text-align: center; }
+
+/* ── SECTORS ──────────────────────────────────────────── */
+#sectors { background: var(--paper-2); }
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+.sector-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.sector-num { font-family: var(--font-h); font-size: 2rem; font-weight: 700; color: var(--paper-2); line-height: 1; margin-bottom: 12px; }
+.sector-card h3 { margin-bottom: 10px; }
+.sector-hook {
+  font-size: 13px;
+  color: var(--ink-3);
+  font-style: italic;
+  border-left: 3px solid var(--teal-lt);
+  padding-left: 12px;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+.sector-body { font-size: 13px; color: var(--ink-2); line-height: 1.65; margin-bottom: 16px; flex: 1; }
+.sector-clients { font-size: 11px; color: var(--ink-3); margin-bottom: 16px; }
+.sector-clients strong { color: var(--ink-2); }
+.sector-cta {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--teal);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.sector-cta:hover { color: var(--teal-dk); }
+.sector-testi {
+  background: var(--paper-2);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--ink-2);
+  font-style: italic;
+  line-height: 1.6;
+}
+.sector-testi-attr { font-size: 11px; color: var(--ink-3); font-style: normal; margin-top: 6px; font-weight: 500; }
+
+/* ── PROJECTS ─────────────────────────────────────────── */
+#projects { background: var(--paper); }
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+  margin-top: 24px;
+}
+.filter-tab {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  font-family: var(--font-b);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-2);
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.filter-tab.active, .filter-tab:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.project-card {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.project-card[data-sector="corp"],
+.project-card[data-sector="research"] {
+  display: none;
+}
+.project-card.show { display: block; }
+.project-card-inner { padding: 24px; }
+.project-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.project-client { font-size: 12px; font-weight: 600; color: var(--ink-3); }
+.project-card h3 { font-size: 1rem; margin-bottom: 8px; line-height: 1.35; }
+.project-lede { font-size: 13px; color: var(--ink-2); line-height: 1.65; margin-bottom: 14px; max-width: 70ch; }
+.project-result {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--teal-lt);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--teal-dk);
+  margin-bottom: 14px;
+}
+.project-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.project-expand-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-b);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--teal);
+  cursor: pointer;
+  padding: 0;
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.project-expand-btn:hover { color: var(--teal-dk); }
+.project-detail {
+  display: none;
+  border-top: 1px solid var(--paper-2);
+  padding: 20px 24px;
+  background: var(--paper);
+}
+.project-detail.open { display: block; }
+.project-detail h4 { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 8px; margin-top: 14px; }
+.project-detail h4:first-child { margin-top: 0; }
+.project-detail ul { padding-left: 16px; }
+.project-detail ul li { font-size: 12px; color: var(--ink-2); line-height: 1.7; }
+.project-detail p { font-size: 12px; color: var(--ink-2); line-height: 1.7; }
+.more-projects-btn {
+  margin-top: 20px;
+  width: 100%;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  font-family: var(--font-b);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.more-projects-btn:hover { border-color: var(--ink-3); color: var(--ink); }
+.projects-inline-cta {
+  margin-top: 36px;
+  background: var(--teal);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.pic-text { font-size: 1rem; font-weight: 600; color: #fff; font-family: var(--font-h); }
+.pic-sub { font-size: 13px; color: rgba(255,255,255,.55); margin-top: 4px; }
+
+/* ── FAQ ──────────────────────────────────────────────── */
+#faq { background: var(--paper-2); }
+.faq-list { margin-top: 28px; }
+.faq-item {
+  background: #fff;
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 16px 20px;
+  text-align: left;
+  font-family: var(--font-b);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  line-height: 1.4;
+}
+.faq-chevron { font-size: 14px; color: var(--ink-3); transition: transform .2s; flex-shrink: 0; }
+.faq-q.open .faq-chevron { transform: rotate(90deg); }
+.faq-a {
+  display: none;
+  padding: 0 20px 18px;
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+.faq-a.open { display: block; }
+.faq-a p + p { margin-top: 10px; }
+
+/* ── FINAL CTA ────────────────────────────────────────── */
+#cta { background: var(--teal); padding: 80px 0; }
+#cta h2 { color: #fff; margin-bottom: 8px; }
+#cta p { color: rgba(255,255,255,.75); }
+.cta-form-note {
+  font-size: 12px;
+  color: rgba(255,255,255,.5);
+  margin-top: 16px;
+}
+.cta-links {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.cta-email {
+  font-size: 14px;
+  color: rgba(255,255,255,.7);
+  text-decoration: none;
+  font-weight: 500;
+}
+.cta-email:hover { color: #fff; }
+.btn--white {
+  background: #fff;
+  color: var(--teal);
+}
+.btn--white:hover { background: rgba(255,255,255,.9); }
+
+/* ── FOOTER ───────────────────────────────────────────── */
+footer {
+  background: #ffffff;
+  color: var(--ink-2);
+  border-top: 1px solid var(--border);
+  padding: 52px 0 28px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+.footer-brand-name {
+  font-family: var(--font-h);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.footer-brand-desc { font-size: 12px; line-height: 1.7; color: var(--ink-2); }
+.footer-col h4 {
+  font-family: var(--font-b);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--amber);
+  margin-bottom: 12px;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 7px; }
+.footer-col ul li a {
+  font-size: 13px;
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: color .15s;
+}
+.footer-col ul li a:hover { color: var(--teal); }
+.footer-bar {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  section { padding: 72px 0; }
+  .proof-strip { grid-template-columns: repeat(2, 1fr); }
+  .proof-cell:nth-child(2) { border-right: none; }
+  .testi-row { grid-template-columns: 1fr; }
+  .formats-grid { grid-template-columns: 1fr; }
+  .sectors-grid { grid-template-columns: 1fr; }
+  .kaliber-cycle { grid-template-columns: repeat(4, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .projects-inline-cta { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .kaliber-cycle { grid-template-columns: repeat(3, 1fr); }
+  .footer-grid { grid-template-columns: 1fr; }
+  .proof-strip { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── STICKY NAV ─────────────────────────────────────── -->
+<nav class="sticky-nav" id="stickyNav" aria-label="Site navigation">
+  <a href="https://nudgeplus.net/" class="nav-logo">Nudge<span>plus</span></a>
+  <ul class="nav-links">
+    <li><a href="#formats" class="nav-active" aria-current="page">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="https://nudgeplus.net/about-us/">About</a></li>
+    <li><a href="https://dwisign.github.io/nudgeplus2026/academy.html" style="opacity:.65;">Academy ↗</a></li>
+  </ul>
+  <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%2C%0A%0A1.%20Behaviour%3A%20%5B...%5D%0A2.%20Population%3A%20%5B...%5D%0A3.%20Timeline%3A%20%5B...%5D" class="nav-cta-btn" aria-label="Book a free scoping call via WhatsApp">Free Scoping Call</a>
+</nav>
+
+<!-- ── FLOATING WA BUTTON ─────────────────────────────── -->
+<a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%2C%0A%0AChallenge%3A%20%5B...%5D%0APopulation%3A%20%5B...%5D%0ATimeline%3A%20%5B...%5D" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L0 24l6.293-1.501A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.793-.5-5.391-1.375L2.5 21.5l.906-3.965A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+
+<!-- ── HERO ────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="container">
+    <nav aria-label="Breadcrumb" style="font-size:12px;color:var(--ink-3);margin-bottom:28px;">
+      <a href="https://nudgeplus.net/" style="color:var(--ink-3);text-decoration:none;">nudgeplus.net</a>
+      <span style="margin:0 6px;">›</span>
+      <span style="color:var(--ink-2);font-weight:500;">Services</span>
+    </nav>
+
+    <div class="hero-badge-row">
+      <span class="hero-badge"><span class="icon">🇮🇩</span> Indonesia's behavioural science pioneer · since 2019</span>
+      <span class="hero-badge"><span class="icon">🏆</span> IRSA-BKF Best Paper Award 2022</span>
+      <span class="hero-badge"><span class="icon">📊</span> IRSA Research Grant 2026</span>
+    </div>
+    <h1>You know people aren't behaving the way you need.<br>We <em>diagnose why.</em> Then we <em>change it.</em></h1>
+    <p class="hero-sub" style="margin-top:20px;">
+      Nudgeplus applies <strong>KALIBER</strong> — our proprietary 7-step method — to understand why a behaviour happens, design an evidence-based intervention, and test it in the field before scale. Research and consultancy as one integrated engagement.
+    </p>
+    <div class="btn-row">
+      <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%2C%0A%0A1.%20Behaviour%20I%20need%20to%20change%3A%20%5B...%5D%0A2.%20Target%20population%3A%20%5B...%5D%0A3.%20Timeline%3A%20%5B...%5D" class="btn btn--primary">Describe Your Challenge — Free Scoping Call</a>
+      <a href="#projects" class="btn btn--ghost">See Our Projects</a>
+    </div>
+
+    <!-- Proof strip -->
+    <div class="proof-strip">
+      <div class="proof-cell">
+        <div class="proof-num">30%</div>
+        <div class="proof-label">COVID compliance uplift<strong>British Embassy × East Java Gov.</strong></div>
+      </div>
+      <div class="proof-cell">
+        <div class="proof-num">61%</div>
+        <div class="proof-label">Programme attendance uplift<strong>Plan International PARENTS</strong></div>
+      </div>
+      <div class="proof-cell">
+        <div class="proof-num">120K+</div>
+        <div class="proof-label">Campaign reach<strong>SADAR GOWES · Kemenhub</strong></div>
+      </div>
+      <div class="proof-cell">
+        <div class="proof-num">6+ yrs</div>
+        <div class="proof-label">Indonesia field experience<strong>PhD · World Bank-trained team</strong></div>
+      </div>
+    </div>
+
+    <!-- Top 3 testimonials — moved up from bottom of page -->
+    <div class="testi-row">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"30% peningkatan perilaku mencuci tangan adalah dampak nyata dari pendekatan nudge yang murah ini — sangat penting di masa pandemi."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">ED</div>
+          <div>
+            <div class="testi-name">Emil Dardak</div>
+            <div class="testi-role">Wakil Gubernur Jawa Timur</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Program banyak yang gagal karena asumsi yang salah tentang perilaku. Nudgeplus membantu PLAN International menguak misteri itu dan memperbaikinya."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SA</div>
+          <div>
+            <div class="testi-name">Syifa Andina</div>
+            <div class="testi-role">Senior Program Manager, Plan International Indonesia</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Keselamatan itu bukan hanya isu infrastruktur — sebagian besar justru isu perilaku. Nudgeplus membuka paradigma baru di Jasa Raharja!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">RP</div>
+          <div>
+            <div class="testi-name">Rifka Pratista Sari</div>
+            <div class="testi-role">Head of Road Safety, Jasa Raharja</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AWARDS ──────────────────────────────────────────── -->
+<div id="awards">
+  <div class="container">
+    <div class="awards-inner">
+      <div class="award-card">
+        <div class="award-icon">🏆</div>
+        <div>
+          <div class="award-label">IRSA-BKF 2022</div>
+          <div class="award-title">Best Paper Award — "Nudging people to handwash during the pandemic: Visual priming and saliency"</div>
+          <div class="award-desc">Published in <em>Analyses of Social Issues and Public Policy</em>. Cited by the Deputy Governor of East Java.</div>
+          <a href="https://doi.org/10.1111/asap.12329" class="award-doi" target="_blank" rel="noopener">DOI: 10.1111/asap.12329 ↗</a>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">📊</div>
+        <div>
+          <div class="award-label">IRSA Grant 2026</div>
+          <div class="award-title">Research Support Grant — "Reframing Rural Careers: Nudge-based Intervention for Agricultural Youth Workers"</div>
+          <div class="award-desc">Presented at the 21st IRSA Conference, Bandar Lampung.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CLIENT LOGOS ───────────────────────────────────── -->
+<section id="logos" style="padding:40px 0;border-top:1px solid var(--border);">
+  <div class="container">
+    <p class="logos-label">Organisations we have worked with</p>
+    <div class="logos-grid">
+      <div class="logo-pill"><img src="https://i0.wp.com/nudgeplus.net/wp-content/uploads/2026/03/jasa-raharja.png?fit=259%2C194&ssl=1" alt="Jasa Raharja logo" class="logo-img">Jasa Raharja</div>
+      <div class="logo-pill"><img src="https://i0.wp.com/nudgeplus.net/wp-content/uploads/2020/10/logo-embassy.png?fit=400%2C195&ssl=1" alt="British Embassy Jakarta logo" class="logo-img">British Embassy Jakarta</div>
+      <div class="logo-pill"><div class="logo-initials">KH</div>Kemenhub — Ditjen Hubdat</div>
+      <div class="logo-pill"><img src="https://i0.wp.com/nudgeplus.net/wp-content/uploads/2024/11/Logo-YPII-PLAN.png?fit=10819%2C3311&ssl=1" alt="Plan International Indonesia logo" class="logo-img">Plan International Indonesia</div>
+      <div class="logo-pill"><img src="https://i0.wp.com/nudgeplus.net/wp-content/uploads/2020/10/logo-provinsi-jawa-timur.png?fit=402%2C195&ssl=1" alt="East Java Government logo" class="logo-img">East Java Government</div>
+      <div class="logo-pill"><img src="https://i0.wp.com/nudgeplus.net/wp-content/uploads/2020/05/dki.jpg?fit=400%2C195&ssl=1" alt="BAPEDA DKI Jakarta logo" class="logo-img">BAPEDA DKI Jakarta</div>
+      <div class="logo-pill"><img src="https://i0.wp.com/nudgeplus.net/wp-content/uploads/2021/10/water-org-vector-logo.jpg?fit=400%2C222&ssl=1" alt="Water.org logo" class="logo-img">Water.org Indonesia</div>
+      <div class="logo-pill"><div class="logo-initials">BK</div><abbr title="Badan Kependudukan dan Keluarga Berencana Nasional — National Population &amp; Family Planning Board">BKKBN</abbr></div>
+      <div class="logo-pill"><img src="https://i0.wp.com/nudgeplus.net/wp-content/uploads/2021/01/Logo_CISDI_FullColor.png?fit=3330%2C1305&ssl=1" alt="CISDI logo" class="logo-img">CISDI</div>
+      <div class="logo-pill"><div class="logo-initials">SE</div>Solve Education</div>
+      <div class="logo-pill"><div class="logo-initials">UoS</div>University of Sheffield</div>
+      <div class="logo-pill"><div class="logo-initials">UL</div>University of Lincoln</div>
+      <div class="logo-pill"><div class="logo-initials">BA</div>British Academy</div>
+      <div class="logo-pill"><img src="https://i0.wp.com/nudgeplus.net/wp-content/uploads/2024/11/Logo-Telkom-1.png?fit=4167%2C3201&ssl=1" alt="Telkom Indonesia logo" class="logo-img">Telkom Indonesia</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── KALIBER ──────────────────────────────────────────── -->
+<section id="kaliber">
+  <div class="container">
+    <div class="eyebrow" style="color:var(--teal);">Our proprietary method</div>
+    <div class="kaliber-wordmark">
+      <span>K</span><span>A</span><span>L</span><span>I</span><span>B</span><span>E</span><span>R</span>
+    </div>
+    <p class="kaliber-intro">
+      KALIBER is Nudgeplus's 7-step Behavioural Change Method — developed over 6+ years of field work across Indonesia. Every engagement we deliver is structured around KALIBER. It is not a theory. It is an operational protocol grounded in 60+ years of peer-reviewed behavioural science, calibrated for the Indonesian context.
+    </p>
+
+    <div class="kaliber-cycle">
+      <div class="k-step">
+        <div class="k-step-letter">K</div>
+        <div class="k-step-name">Key Behaviour</div>
+        <div class="k-step-desc">Define the single measurable target</div>
+      </div>
+      <div class="k-step">
+        <div class="k-step-letter">A</div>
+        <div class="k-step-name">Audit</div>
+        <div class="k-step-desc">360° field observation &amp; <abbr title="Focus Group Discussion" style="text-decoration:underline dotted rgba(255,255,255,.4)">FGD</abbr></div>
+      </div>
+      <div class="k-step">
+        <div class="k-step-letter">L</div>
+        <div class="k-step-name">Leverage</div>
+        <div class="k-step-desc">Find what helps &amp; what blocks</div>
+      </div>
+      <div class="k-step">
+        <div class="k-step-letter">I</div>
+        <div class="k-step-name">Insight Tools</div>
+        <div class="k-step-desc">Design the nudge using <abbr title="MINDSPACE: Messenger, Incentives, Norms, Defaults, Salience, Priming, Affect, Commitments, Ego" style="text-decoration:underline dotted rgba(255,255,255,.4)">MINDSPACE</abbr></div>
+      </div>
+      <div class="k-step">
+        <div class="k-step-letter">B</div>
+        <div class="k-step-name">Behavioural Experiment</div>
+        <div class="k-step-desc">Test with a controlled pilot</div>
+      </div>
+      <div class="k-step">
+        <div class="k-step-letter">E</div>
+        <div class="k-step-name">Evidence</div>
+        <div class="k-step-desc">Measure, analyse &amp; validate impact</div>
+      </div>
+      <div class="k-step">
+        <div class="k-step-letter">R</div>
+        <div class="k-step-name">Reflection</div>
+        <div class="k-step-desc">Scale what works. Iterate what doesn't.</div>
+      </div>
+    </div>
+
+    <div class="kaliber-ip">
+      <strong style="color:rgba(255,255,255,.7);">© Proprietary framework — all rights reserved.</strong><br>
+      KALIBER was developed by Nudgeplus and is the exclusive intellectual property of Nudgeplus. No other behavioural science firm in Indonesia operates this framework.
+    </div>
+
+    <button class="kaliber-detail-toggle" onclick="toggleKDetail(this)" aria-expanded="false">
+      Read the full methodology ▾
+    </button>
+
+    <div class="kaliber-detail" id="kaliberDetail">
+      <div class="k-accordion-item">
+        <div class="k-acc-header" onclick="toggleKAcc(this)">
+          <span class="k-acc-letter">K</span>
+          <span class="k-acc-name">Key Behaviour — Define what we're changing</span>
+          <span class="k-acc-sub">Always first</span>
+          <span class="k-acc-chevron">›</span>
+        </div>
+        <div class="k-acc-body">Identify 3–5 candidate behaviours and align all stakeholders on a single specific, measurable target. Most projects fail here — not because change is impossible, but because every stakeholder is trying to change a different behaviour. We resolve that before any fieldwork begins.</div>
+      </div>
+      <div class="k-accordion-item">
+        <div class="k-acc-header" onclick="toggleKAcc(this)">
+          <span class="k-acc-letter">A</span>
+          <span class="k-acc-name">Behavioural Audit — Observe, map, understand</span>
+          <span class="k-acc-sub">Core diagnostic</span>
+          <span class="k-acc-chevron">›</span>
+        </div>
+        <div class="k-acc-body">360° field assessment: direct observation, <abbr title="Focus Group Discussion">FGD</abbr>, interview, survey, and literature meta-analysis. We segment the population, map user personas using empathy frameworks, and produce a step-by-step Key Behaviour Map — showing what people actually do, not what they say they do.</div>
+      </div>
+      <div class="k-accordion-item">
+        <div class="k-acc-header" onclick="toggleKAcc(this)">
+          <span class="k-acc-letter">L</span>
+          <span class="k-acc-name">Leveraging &amp; Lowering — Find the lever</span>
+          <span class="k-acc-sub">Diagnosis</span>
+          <span class="k-acc-chevron">›</span>
+        </div>
+        <div class="k-acc-body">Identify and rank the factors that help people perform the behaviour (Leveraging Factors) and those that block it (Lowering Factors). The priority factor — the one with the highest impact and tractability — becomes the intervention target. This prevents the most common mistake: designing the intervention around the wrong barrier.</div>
+      </div>
+      <div class="k-accordion-item">
+        <div class="k-acc-header" onclick="toggleKAcc(this)">
+          <span class="k-acc-letter">I</span>
+          <span class="k-acc-name">Insight Tools — Design the nudge</span>
+          <span class="k-acc-sub">Design</span>
+          <span class="k-acc-chevron">›</span>
+        </div>
+        <div class="k-acc-body">Select the behaviour change mechanism using <abbr title="Messenger, Incentives, Norms, Defaults, Salience, Priming, Affect, Commitments, Ego">MINDSPACE</abbr> and <abbr title="Easy, Attractive, Social, Timely">EAST</abbr>: Messenger, Incentive, Norms, Defaults, Salience, Priming, Affect, Commitment, or Ego. We design the intervention — messaging, choice architecture, environment redesign, digital nudge, or campaign — and state the testable hypothesis it rests on.</div>
+      </div>
+      <div class="k-accordion-item">
+        <div class="k-acc-header" onclick="toggleKAcc(this)">
+          <span class="k-acc-letter">B</span>
+          <span class="k-acc-name">Behavioural Experiment — Test before scale</span>
+          <span class="k-acc-sub">Validation</span>
+          <span class="k-acc-chevron">›</span>
+        </div>
+        <div class="k-acc-body">Run a controlled pilot — field <abbr title="Randomised Controlled Trial">RCT</abbr>, A/B test, or quasi-experimental design — comparing control (no intervention) against treatment (the nudge). Sample size is calculated for adequate statistical power. Ethics protocol is applied where required. We never recommend scaling an untested intervention.</div>
+      </div>
+      <div class="k-accordion-item">
+        <div class="k-acc-header" onclick="toggleKAcc(this)">
+          <span class="k-acc-letter">E</span>
+          <span class="k-acc-name">Evidence — Measure and validate impact</span>
+          <span class="k-acc-sub">Measurement</span>
+          <span class="k-acc-chevron">›</span>
+        </div>
+        <div class="k-acc-body">Collect, clean, and analyse outcome data against the baseline established in the Audit phase. We apply appropriate statistical methods, test for significance, and produce a clear evidence report — structured for internal leadership, donor reporting, or academic publication depending on the engagement format.</div>
+      </div>
+      <div class="k-accordion-item">
+        <div class="k-acc-header" onclick="toggleKAcc(this)">
+          <span class="k-acc-letter">R</span>
+          <span class="k-acc-name">Reflection — Scale what works. Iterate what doesn't.</span>
+          <span class="k-acc-sub">Scale</span>
+          <span class="k-acc-chevron">›</span>
+        </div>
+        <div class="k-acc-body">If the experiment confirms the hypothesis: we deliver a fully documented scale-up playbook — ready for your implementation team, leadership, or donors. If the hypothesis fails: we return to K with a revised hypothesis. KALIBER is a cycle, not a project. Most breakthroughs come on the second or third pass.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FORMATS ─────────────────────────────────────────── -->
+<section id="formats">
+  <div class="container">
+    <div class="eyebrow">Three ways to work with us</div>
+    <h2>Every engagement starts with a conversation. The shape follows your situation.</h2>
+    <p>You don't need to arrive knowing exactly what you need. Tell us the behaviour you want to change and who is — or isn't — doing it. We'll tell you which engagement fits, what it involves, and what it costs. There is no standard package. There is no minimum spend to discuss.</p>
+
+    <div class="formats-grid">
+      <div class="format-card">
+        <div class="format-num">Option 01</div>
+        <div class="format-title">Rapid Audit</div>
+        <div class="format-meta">2–4 weeks · Research-focused</div>
+        <p class="format-desc">You want to understand a behaviour problem before committing to a full solution. We go into the field, observe what is actually happening, and come back with a clear diagnosis — what the real barrier is, what is driving the behaviour, and what kind of intervention is most likely to move it.</p>
+        <ul class="format-list">
+          <li>We agree on exactly which behaviour to focus on</li>
+          <li>We observe, interview, and map what is actually happening in the field</li>
+          <li>We identify the real barriers — not the assumed ones</li>
+          <li>You receive a written diagnosis and an intervention brief</li>
+          <li>One debrief session to walk through the findings</li>
+        </ul>
+        <p class="format-suited"><strong>Good if:</strong> You need evidence before a decision · You want to check why a campaign or programme is underperforming · You have a policy challenge and need a clearer picture before commissioning a full study</p>
+      </div>
+
+      <div class="format-card featured">
+        <div class="format-badge">Most Common</div>
+        <div class="format-num">Option 02</div>
+        <div class="format-title">Full Engagement</div>
+        <div class="format-meta">Up to 6 months · Research + Consultancy</div>
+        <p class="format-desc">You want to understand the problem and fix it. We diagnose the behaviour, design an intervention, test it on a real population, and hand you a playbook that is ready to scale — with evidence that it actually works.</p>
+        <ul class="format-list">
+          <li>Full field research: observation, interviews, and group discussions</li>
+          <li>Identification of what is helping and what is blocking the behaviour</li>
+          <li>Design of the intervention — messaging, environment, process, or digital</li>
+          <li>A real-world pilot to test whether the intervention moves the behaviour</li>
+          <li>A scale-up playbook your team can implement</li>
+          <li>A debrief with leadership on findings and next steps</li>
+        </ul>
+        <p class="format-suited"><strong>Good if:</strong> You have a behaviour problem that needs a tested solution · You cannot afford to scale an intervention that might not work · Your funders or leadership require evidence before rollout</p>
+      </div>
+
+      <div class="format-card">
+        <div class="format-num">Option 03</div>
+        <div class="format-title">Research Partnership</div>
+        <div class="format-meta">12 months or more · Research + Consultancy + Publication</div>
+        <p class="format-desc">You need evidence that meets the highest standards — publishable, replicable, and ready for national scale. This is for government programmes, donor-funded evaluations, and academic collaborations that require rigorous, independently verifiable findings.</p>
+        <ul class="format-list">
+          <li>Everything in the Full Engagement</li>
+          <li>Research across multiple locations or provinces</li>
+          <li>A controlled experiment with a proper comparison group</li>
+          <li>Ethics review documentation if required by your institution</li>
+          <li>A write-up that meets academic publication standards</li>
+          <li>A national scale-up plan and implementation handover</li>
+        </ul>
+        <p class="format-suited"><strong>Good if:</strong> You need findings that can be published or cited · Your programme will be rolled out nationally and needs a proven evidence base · You are working with a donor or ministry that requires independent verification</p>
+      </div>
+    </div>
+
+    <div class="pricing-note">
+      <strong>How we price engagements.</strong> Every engagement is scoped individually — there is no fixed price list. Cost depends on what behaviour you need to change, where your population is, how rigorous the evidence needs to be, and what format your institution needs the output in. At the first conversation we will give you a budget estimate. At the proposal stage we will give you two options: one with a tested intervention, one without — so you can decide how much evidence your situation requires. We will always tell you honestly if a question requires more budget than you have.
+    </div>
+
+    <div class="formats-cta">
+      <p>Not sure which option fits? That is exactly what the first conversation is for — and it is free.</p>
+      <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%2C%0A%0A1.%20Behaviour%3A%20%5B...%5D%0A2.%20Population%3A%20%5B...%5D%0A3.%20Timeline%3A%20%5B...%5D" class="btn btn--primary">Talk to us — it's free</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTORS ─────────────────────────────────────────── -->
+<section id="sectors">
+  <div class="container">
+    <div class="eyebrow">Who we work with</div>
+    <h2>If the problem is about behaviour or decision-making, we can help.</h2>
+    <p>Nudgeplus works with any organisation — government, NGO, or private — as long as the core challenge involves how people think, decide, or act. We do not specialise in a sector. We specialise in behaviour. The examples below show where we have worked most, but they are not limits.</p>
+
+    <div class="sectors-grid">
+      <div class="sector-card">
+        <div class="sector-num">01</div>
+        <h3>Government &amp; Public Institutions</h3>
+        <div class="sector-hook">"We have a regulation. Citizens aren't complying. Information campaigns haven't worked. What else is there?"</div>
+        <p class="sector-body">When people are not doing what a policy, rule, or public health campaign asks them to do — and information alone has not moved them — the problem is usually behavioural. We find out what is actually stopping them, then design an intervention that works with human psychology rather than against it. Outputs can be structured for policy briefs, leadership presentations, or procurement documentation.</p>
+        <p class="sector-clients"><strong>We have worked with:</strong> Kemenhub (Ministry of Transportation), BAPEDA DKI Jakarta, Jasa Raharja, East Java Government, BKKBN</p>
+        <div class="sector-testi">
+          "30% increase in handwashing compliance — a real impact from this low-cost nudge approach, crucial during the pandemic."
+          <div class="sector-testi-attr">Emil Dardak · Deputy Governor, East Java</div>
+        </div>
+        <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%2C%0A%0AInstitution%3A%20%5B...%5D%0APolicy%20or%20behaviour%20challenge%3A%20%5B...%5D" class="sector-cta" style="margin-top:16px;">Tell us your policy challenge →</a>
+      </div>
+
+      <div class="sector-card">
+        <div class="sector-num">02</div>
+        <h3>NGOs &amp; Development Organisations</h3>
+        <div class="sector-hook">"Our programme is well-designed, adequately funded, and the community isn't changing."</div>
+        <p class="sector-body">Most programmes that fail to change behaviour were designed around the wrong assumption about why people behave the way they do. We find the real barrier — not the assumed one — and redesign the intervention around it. For programmes that require rigorous evidence, we produce findings that meet international donor reporting standards and can be independently verified or published.</p>
+        <p class="sector-clients"><strong>We have worked with:</strong> Plan International Indonesia, Water.org, British Embassy Jakarta, University of Sheffield, British Academy</p>
+        <div class="sector-testi">
+          "Many programmes fail because of wrong assumptions about behaviour. Nudgeplus helped Plan International uncover the real barrier — and fix it."
+          <div class="sector-testi-attr">Syifa Andina · Senior Program Manager, Plan International Indonesia</div>
+        </div>
+        <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%2C%0A%0AOrganisation%3A%20%5B...%5D%0AProgramme%20and%20challenge%3A%20%5B...%5D" class="sector-cta" style="margin-top:16px;">Tell us about your programme →</a>
+      </div>
+
+      <div class="sector-card">
+        <div class="sector-num">03</div>
+        <h3>Businesses &amp; Organisations</h3>
+        <div class="sector-hook">"We know what our customers or employees are doing. We don't know why — or how to change it."</div>
+        <p class="sector-body">Whether the challenge is customer behaviour, employee habits, product engagement, or operational compliance — if it involves how people make decisions, behavioural science can help. We translate the diagnosis into practical outputs your team can act on: a campaign redesign, a product change, a communication strategy, or a new process that makes the right behaviour easier.</p>
+        <p class="sector-clients"><strong>We have worked with:</strong> Telkom Indonesia, Bike2Work Indonesia, Solve Education, CISDI</p>
+        <div class="sector-testi">
+          "The game design drew heavily on behavioural science insights — Nudgeplus made the mechanics actually work on real behaviour."
+          <div class="sector-testi-attr">Talitha Amalia · COO, Solve Education</div>
+        </div>
+        <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%2C%0A%0AOrganisation%3A%20%5B...%5D%0ABehaviour%20or%20decision-making%20challenge%3A%20%5B...%5D" class="sector-cta" style="margin-top:16px;">Tell us what behaviour you need to move →</a>
+      </div>
+    </div>
+
+    <div class="pricing-note" style="margin-top:24px;">
+      <strong>Not in one of these categories?</strong> That is fine. If your challenge involves how people behave or make decisions — in any context — get in touch. We will tell you in the first conversation whether it is something we can help with.
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ─────────────────────────────────────────── -->
+<section id="projects">
+  <div class="container">
+    <div class="eyebrow">Past engagements</div>
+    <h2>What KALIBER looks like in practice.</h2>
+    <p>Every project below followed the KALIBER cycle — diagnosis before design, experiment before scale.</p>
+
+    <div class="filter-tabs" role="tablist" aria-label="Filter projects by sector">
+      <button class="filter-tab active" onclick="filterProjects('all', this)" role="tab" aria-selected="true">All</button>
+      <button class="filter-tab" onclick="filterProjects('gov', this)" role="tab" aria-selected="false">Government &amp; Policy</button>
+      <button class="filter-tab" onclick="filterProjects('ngo', this)" role="tab" aria-selected="false">NGO &amp; Development</button>
+      <button class="filter-tab" onclick="filterProjects('corp', this)" role="tab" aria-selected="false">Corporate &amp; Digital</button>
+      <button class="filter-tab" onclick="filterProjects('research', this)" role="tab" aria-selected="false">Research</button>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+
+      <!-- Project 1: British Embassy -->
+      <div class="project-card show" data-sector="gov ngo">
+        <div class="project-card-inner">
+          <div class="project-meta">
+            <span class="tag">🏆 IRSA-BKF Best Paper 2022</span>
+            <span class="tag tag--amber">Field Experiment</span>
+            <span class="project-client">British Embassy Jakarta × East Java Government</span>
+          </div>
+          <h3>A poster changes everything — visual priming increased handwashing by 30% during COVID-19</h3>
+          <p class="project-lede">The campaign assumed information was the barrier. It wasn't. KALIBER audit revealed the real barrier was environmental friction: handwashing stations were not positioned at the actual decision moments. A single low-cost intervention — repositioning soap and adding a visual priming cue at the correct decision point — produced a 30% compliance increase, verified against a control group (n=1,648).</p>
+          <div class="project-result">✓ 30% compliance uplift · Published: DOI 10.1111/asap.12329</div>
+          <div class="project-tags">
+            <span class="tag">Visual priming</span>
+            <span class="tag">Controlled experiment</span>
+            <span class="tag">n=1,648</span>
+            <span class="tag">Peer-reviewed</span>
+          </div>
+          <button class="project-expand-btn" onclick="expandProject(this)" aria-expanded="false">View methodology ▾</button>
+        </div>
+        <div class="project-detail">
+          <h4>Key finding</h4>
+          <p>Information deficit was not the barrier — environmental friction was. Positioning the priming cue at the exact decision moment (approaching the washroom) produced measurable behaviour change at negligible cost.</p>
+          <h4>Method</h4>
+          <ul>
+            <li>Pre/post measurement with control group (n=1,648)</li>
+            <li>Online survey + direct observation</li>
+            <li>Visual priming and saliency as the intervention mechanism</li>
+          </ul>
+          <h4>Published output</h4>
+          <p><em>Analyses of Social Issues and Public Policy</em>, 2022. Cited by Wakil Gubernur Jawa Timur, Emil Dardak. <a href="https://doi.org/10.1111/asap.12329" style="color:var(--teal)">DOI: 10.1111/asap.12329 ↗</a></p>
+        </div>
+      </div>
+
+      <!-- Project 2: Plan International -->
+      <div class="project-card show" data-sector="ngo">
+        <div class="project-card-inner">
+          <div class="project-meta">
+            <span class="tag">Full KALIBER</span>
+            <span class="tag tag--amber">3 Provinces</span>
+            <span class="project-client">Yayasan Plan International Indonesia · PARENTS Programme</span>
+          </div>
+          <h3>Indonesia's stunting rate is 21.5% — yet only 7.4% of caregivers attend the parenting classes that would fix it</h3>
+          <p class="project-lede">Only 7.4% of eligible caregivers attended BKB parenting classes — and fathers were almost entirely absent. KALIBER audit revealed the barriers were not logistical: childcare is socially coded as women's work, and youth found BKB irrelevant. Sixteen segment-specific nudge interventions were designed. The result: caregiver attendance intention jumped by 61% on average; among male caregivers — the hardest group to move — 41% uplift.</p>
+          <div class="project-result">✓ +61% attendance intention · +41% male caregivers · Embedded in national BKKBN training under PERPRES No.72/2021</div>
+          <div class="project-tags">
+            <span class="tag">16 nudge designs</span>
+            <span class="tag">Social identity framing</span>
+            <span class="tag">3 provinces</span>
+            <span class="tag">National policy embedded</span>
+          </div>
+          <button class="project-expand-btn" onclick="expandProject(this)" aria-expanded="false">View methodology ▾</button>
+        </div>
+        <div class="project-detail">
+          <h4>Provinces</h4><p>Pandeglang (Banten), Lombok (NTB), NTT</p>
+          <h4>Key barriers found</h4>
+          <ul>
+            <li>Childcare socially coded as women's work — male participation seen as deviant</li>
+            <li>Youth perceived BKB as irrelevant and socially unappealing</li>
+            <li>Logistical barriers were secondary to identity and norm barriers</li>
+          </ul>
+          <h4>Interventions designed</h4>
+          <ul>
+            <li>"Save the Date" commitment device for female caregivers</li>
+            <li>Social gamification and peer norm reframing for youth</li>
+            <li>Identity-based visual messaging: "Ayah Hebat" framing for fathers</li>
+          </ul>
+          <h4>Scale outcome</h4>
+          <p>16 nudge designs now embedded in national BKKBN (National Family Planning Board) <abbr title="Strategi Komunikasi Perubahan Perilaku — Behavioural Change Communication Strategy">SBCC</abbr> cadre training under <abbr title="Presidential Decree">PERPRES</abbr> No.72/2021.</p>
+        </div>
+      </div>
+
+      <!-- Project 3: Jasa Raharja -->
+      <div class="project-card show" data-sector="gov">
+        <div class="project-card-inner">
+          <div class="project-meta">
+            <span class="tag">Full Engagement</span>
+            <span class="tag tag--amber">4 Phases · 12 Weeks</span>
+            <span class="project-client">Jasa Raharja — National Road Safety</span>
+          </div>
+          <h3>Indonesia's national road safety training tells drivers what to do. So why do fatal accidents keep happening?</h3>
+          <p class="project-lede">The audit revealed drivers already know the rules. The real barriers are optimism bias ("accidents don't happen to me"), present bias (comfort over precaution), and social norms (non-compliance normalised by peers). The redesign applied <abbr title="Easy, Attractive, Social, Timely">EAST</abbr> and <abbr title="Capability, Opportunity, Motivation — Behaviour">COM-B</abbr> to all 5 modules — replacing 812 words of technical instruction in the brake failure module with a three-step visual heuristic, reducing cognitive load at the exact conditions that cause accidents.</p>
+          <div class="project-result">✓ 5 redesigned <abbr title="Standar Kompetensi Kerja Nasional Indonesia — National Occupational Skills Standards">SKKNI</abbr>-compliant modules · Behavioural validation completed</div>
+          <div class="project-tags">
+            <span class="tag">EAST framework</span>
+            <span class="tag">COM-B diagnosis</span>
+            <span class="tag">Cognitive load reduction</span>
+            <span class="tag">5 modules</span>
+          </div>
+          <button class="project-expand-btn" onclick="expandProject(this)" aria-expanded="false">View 4-phase structure ▾</button>
+        </div>
+        <div class="project-detail">
+          <h4>4-phase structure</h4>
+          <ul>
+            <li><strong>Phase 1 (Wk 1–3):</strong> Current State Assessment — gap analysis per user group across all 5 modules</li>
+            <li><strong>Phase 2 (Wk 4–5):</strong> Behavioural Audit — score each module for clarity, salience, and nudge effectiveness using EAST + COM-B</li>
+            <li><strong>Phase 3 (Wk 6–9):</strong> Validation — SKKNI alignment + survey comparing original vs redesigned for engagement and compliance motivation</li>
+            <li><strong>Phase 4 (Wk 10–12):</strong> Presentation Materials — 5 redesigned decks with speaker notes</li>
+          </ul>
+          <h4>Key findings</h4>
+          <ul>
+            <li>Brake failure module: 812 words, 17 slides — extreme cognitive overload for truck and bus drivers</li>
+            <li>Dominant barrier: optimism bias and peer normalisation, not information deficit</li>
+            <li>Solution: commitment device (checklist) + narrative persona framing + social norm messaging</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Project 4: SADAR GOWES -->
+      <div class="project-card show" data-sector="gov">
+        <div class="project-card-inner">
+          <div class="project-meta">
+            <span class="tag">National Campaign</span>
+            <span class="tag tag--amber">120K+ Reached</span>
+            <span class="project-client">Bike2Work Indonesia × Kemenhub (Ditjen Hubdat)</span>
+          </div>
+          <h3>Most road safety campaigns address one audience. SADAR GOWES addresses two simultaneously.</h3>
+          <p class="project-lede">Co-designed by Nudgeplus and Bike2Work Indonesia, launched by Ditjen Hubdat on World Bicycle Day 2025. SADAR GOWES uses social norm messaging and identity-based framing — not fear — to shift behaviour in both motorists and cyclists. The SADAR acronym is a behavioural mnemonic: each letter encodes a specific safe road behaviour. Materials are open-licensed for public use.</p>
+          <div class="project-result">✓ 120,000+ social media users reached · Adopted by Ditjen Hubdat</div>
+          <div class="project-tags">
+            <span class="tag">Dual-audience nudge</span>
+            <span class="tag">Social norm framing</span>
+            <span class="tag">Identity messaging</span>
+            <span class="tag">Behavioural mnemonic</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: BAPEDA DKI -->
+      <div class="project-card show" data-sector="gov">
+        <div class="project-card-inner">
+          <div class="project-meta">
+            <span class="tag">Consultation + Training</span>
+            <span class="project-client">Badan Pendapatan Daerah (BAPEDA) DKI Jakarta — Regional Revenue Agency</span>
+          </div>
+          <h3>What if paying local taxes wasn't just about penalties — but about psychology?</h3>
+          <p class="project-lede">Jakarta's tax compliance challenge is not about awareness — most Jakartans know they should pay. The barriers are social norm (others aren't paying either), process friction (forms are hard), and identity disconnect (paying feels like giving to an abstract institution, not to the city). Three nudge strategies were designed: descriptive social norm messaging, form simplification, and civic identity reframing. BAPEDA staff were trained to apply the KALIBER diagnostic independently.</p>
+          <div class="project-result">✓ 3 nudge strategies designed · Staff trained in KALIBER application</div>
+          <div class="project-tags">
+            <span class="tag">Social norm messaging</span>
+            <span class="tag">Choice architecture</span>
+            <span class="tag">Civic identity</span>
+            <span class="tag">Staff training</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hidden projects (load more) -->
+      <div class="project-card" data-sector="corp" id="projectSolve">
+        <div class="project-card-inner">
+          <div class="project-meta">
+            <span class="tag">Gamification Consultancy</span>
+            <span class="project-client">Solve Education × Nusantara Innovation Forum</span>
+          </div>
+          <h3>Can a game change children's COVID-19 hygiene behaviour? Only if the mechanics are behaviourally grounded.</h3>
+          <p class="project-lede">DAWN OF CIVILIZATION used gamification to upgrade children's COVID hygiene behaviours. Each game mechanic was mapped to a specific <abbr title="Messenger, Incentives, Norms, Defaults, Salience, Priming, Affect, Commitments, Ego">MINDSPACE</abbr>/KALIBER trigger — habit formation through repetition, social proof through leaderboards, commitment devices through in-game pledges, and salience through visual reminders timed to decision moments.</p>
+          <div class="project-result">✓ All game mechanics mapped to KALIBER behavioural triggers</div>
+          <div class="project-tags"><span class="tag">Gamification design</span><span class="tag">MINDSPACE</span><span class="tag">Habit formation</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" data-sector="research" id="projectBritAcad">
+        <div class="project-card-inner">
+          <div class="project-meta">
+            <span class="tag">Funded Research</span>
+            <span class="tag tag--amber">British Academy Grant 2023–24</span>
+            <span class="project-client">University of Sheffield · University of Lincoln · Nudgeplus</span>
+          </div>
+          <h3>Green financial products are available in Indonesia. Indonesians aren't using them. What's actually in the way?</h3>
+          <p class="project-lede">Funded by the British Academy's Talent Development Awards Scheme, this UK–Indonesia collaboration investigates behavioural barriers to green financial decision-making: how framing effects, loss aversion, present bias, and institutional trust interact with green investment decisions.</p>
+          <div class="project-result">✓ British Academy Talent Development Award 2023–24</div>
+          <div class="project-tags"><span class="tag">Loss aversion</span><span class="tag">Present bias</span><span class="tag">UK–Indonesia collaboration</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" data-sector="research" id="projectPersonality">
+        <div class="project-card-inner">
+          <div class="project-meta">
+            <span class="tag">National Research Initiative</span>
+            <span class="tag tag--amber">34 Provinces</span>
+            <span class="project-client">Nudgeplus — Ongoing</span>
+          </div>
+          <h3>The Indonesia Personality Map — the first empirical behavioural baseline of the Indonesian population</h3>
+          <p class="project-lede">Most behavioural interventions import Western models unchanged. The Indonesia Personality Map produces a rigorous empirical baseline — personality traits, risk preferences, and decision-making patterns across all 34 provinces and demographic segments — that Nudgeplus uses to calibrate every research design for the Indonesian context.</p>
+          <div class="project-result">✓ 34-province national baseline · Ongoing</div>
+          <div class="project-tags"><span class="tag">Cross-province sampling</span><span class="tag">Psychometric profiling</span><span class="tag">National baseline</span></div>
+        </div>
+      </div>
+
+    </div><!-- /projects-grid -->
+
+    <button class="more-projects-btn" id="moreProjectsBtn" onclick="loadMoreProjects()">
+      Show 3 more projects (Corporate &amp; Research) ▾
+    </button>
+
+    <!-- Inline CTA after projects -->
+    <div class="projects-inline-cta">
+      <div>
+        <div class="pic-text">Seen enough? Tell us your behaviour change challenge.</div>
+        <div class="pic-sub">Free scoping call · No commitment · We respond within 1 business day</div>
+      </div>
+      <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%2C%0A%0A1.%20Behaviour%20I%20need%20to%20change%3A%20%5B...%5D%0A2.%20Target%20population%3A%20%5B...%5D%0A3.%20Timeline%3A%20%5B...%5D" class="btn btn--white">Describe Your Challenge →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FAQ ─────────────────────────────────────────────── -->
+<section id="faq">
+  <div class="container">
+    <div class="eyebrow">Common questions</div>
+    <h2>Things people ask before they get in touch.</h2>
+    <p>Most of our clients had never worked with a behavioural science firm before they called us. These are the questions they asked first.</p>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">We have never worked with a behavioural science firm before. Where do we even start? <span class="faq-chevron">›</span></button>
+        <div class="faq-a">
+          <p>You start by telling us what is not working — which behaviour you need to change, who the people are, and why it matters. That is all. You do not need to have a solution in mind, a budget approved, or a brief written. The first conversation is free, takes about 30 minutes, and by the end of it we will tell you clearly whether we can help, what form that might take, and roughly what it would cost.</p>
+          <p>Most of our best projects began with an organisation saying "we are not sure this is even a behavioural science problem." It usually is. <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%2C%0A%0AWe%27d%20like%20to%20have%20a%20first%20conversation." style="color:var(--teal);font-weight:600;">Start the conversation →</a></p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">We already know what we want to do. Can you just help us design it? <span class="faq-chevron">›</span></button>
+        <div class="faq-a">
+          <p>Yes — but we will always ask why you want to do it first. Not to slow you down, but because the most common reason interventions fail is that the solution was designed for the wrong problem. If your diagnosis is sound, we will confirm it quickly and move straight to design. If something looks off, we would rather tell you now than have you invest in an intervention that does not move the behaviour.</p>
+          <p>In practice, even a short Rapid Audit — two to four weeks — is enough to validate your thinking and significantly increase the chance the design actually works. <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%2C%0A%0AWe%20have%20an%20existing%20idea%20we%27d%20like%20to%20discuss." style="color:var(--teal);font-weight:600;">Tell us what you are thinking →</a></p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">How is this different from hiring a regular consultant or a market research firm? <span class="faq-chevron">›</span></button>
+        <div class="faq-a">
+          <p>A regular consultant typically gives you a recommendation based on experience and frameworks. A market research firm tells you what people say they do. Nudgeplus does something different: we go into the field to observe what people actually do, find the real psychological barrier — not the assumed one — and design an intervention around it. Then we test the intervention on a real population before recommending you scale it.</p>
+          <p>The practical difference: our 30% handwashing result came from a poster repositioned at the exact moment people make the decision — not from a new information campaign. That kind of precision only comes from behavioural diagnosis. <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%2C%0A%0AI%27d%20like%20to%20understand%20more%20about%20your%20approach." style="color:var(--teal);font-weight:600;">See how it works →</a></p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Do we need a big budget to work with you? <span class="faq-chevron">›</span></button>
+        <div class="faq-a">
+          <p>No. The first conversation costs nothing. From there, the smallest engagement — a Rapid Audit — runs two to four weeks and is priced to be accessible for organisations that need a diagnosis before committing to a larger project. We will always tell you honestly at the first call whether your budget is enough for what you are trying to do. If it is not, we will suggest a scaled alternative or tell you plainly what the minimum investment would need to be.</p>
+          <p>We do not have a minimum contract value. What we do require is a clear behaviour question — because without that, no budget is enough. <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%2C%0A%0AI%27d%20like%20to%20discuss%20budget%20and%20scope." style="color:var(--teal);font-weight:600;">Ask about pricing →</a></p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">We already have data — surveys, past reports, previous studies. Can you use it? <span class="faq-chevron">›</span></button>
+        <div class="faq-a">
+          <p>Yes, and it often saves significant time. Survey data tells us what is happening — who is or is not doing the behaviour, and at what rate. What it usually cannot tell us is why. We use your existing data as the starting point and add behavioural field observation to answer the causal question your data could not reach.</p>
+          <p>Share what you have at the first call. We will tell you exactly what it can and cannot tell us, what gap remains, and what it would take to close it. <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%2C%0A%0AWe%20have%20existing%20data%20we%27d%20like%20to%20discuss." style="color:var(--teal);font-weight:600;">Bring your data to the first call →</a></p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Can the findings be published, submitted to donors, or used to support a policy proposal? <span class="faq-chevron">›</span></button>
+        <div class="faq-a">
+          <p>Yes — for Research Partnership engagements, which are designed specifically to produce publishable, independently verifiable evidence. We produce a methodology write-up that meets academic publication standards, ethics review documentation where your institution requires it, and a findings report structured for donor submission or policy briefing.</p>
+          <p>Our COVID-19 handwashing study was published in a peer-reviewed international journal and cited by the Deputy Governor of East Java as evidence for provincial policy. We know what publishable evidence looks like and how to produce it. <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%2C%0A%0AWe%20need%20evidence%20suitable%20for%20publication%20or%20donor%20reporting." style="color:var(--teal);font-weight:600;">Discuss a research partnership →</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ────────────────────────────────────────── -->
+<section id="cta">
+  <div class="container">
+    <div class="eyebrow" style="color:rgba(255,255,255,.5);">Start the conversation</div>
+    <h2>Describe your behaviour change challenge.</h2>
+    <p style="max-width:58ch;">Tell us what behaviour you need to change — who is doing it or not doing it, and why it matters. We'll tell you which engagement format fits, what it would take, and whether we are the right team for it. The scoping call is free and takes 30 minutes.</p>
+    <div class="cta-links">
+      <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%2C%0A%0A1.%20Behaviour%20I%20need%20to%20change%3A%20%5B...%5D%0A2.%20Target%20population%3A%20%5B...%5D%0A3.%20Timeline%20and%20scope%3A%20%5B...%5D" class="btn btn--white">WhatsApp — Describe Your Challenge</a>
+      <a href="mailto:info@nudgeplus.net?subject=Engagement%20Inquiry&body=Hi%20Nudgeplus%2C%0A%0A1.%20Behaviour%3A%20%0A2.%20Population%3A%20%0A3.%20Timeline%3A%20" class="cta-email">or email info@nudgeplus.net</a>
+    </div>
+    <p class="cta-form-note">No commitment required · Scoping call is free · We respond within 1 business day · Jakarta · Surabaya · London</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────────── -->
+<footer>
+  <div class="container--wide">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Nudgeplus</div>
+        <p class="footer-brand-desc">Indonesia's behavioural science firm. Research · Consultancy · Training. KALIBER-powered. Since 2019.<br><br>Jakarta · Surabaya · London<br><a href="mailto:info@nudgeplus.net" style="color:rgba(255,255,255,.4);text-decoration:none;">info@nudgeplus.net</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#formats">Research &amp; Consultancy</a></li>
+          <li><a href="#kaliber">KALIBER Method</a></li>
+          <li><a href="#formats">Engagement Formats</a></li>
+          <li><a href="#projects">All Projects</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Academy</h4>
+        <ul>
+          <li><a href="https://dwisign.github.io/nudgeplus2026/academy.html">Academy Overview</a></li>
+          <li><a href="https://dwisign.github.io/nudgeplus2026/gap-finder.html">Gap Finder Tool</a></li>
+        </ul>
+        <h4 style="margin-top:16px;">Projects</h4>
+        <ul>
+          <li><a href="https://nudgeplus.net/indonesia-personality-map/">Personality Map</a></li>
+          <li><a href="https://nudgeplus.net/satu-kampanye-dua-arah-untuk-pengemudi-dan-pesepeda-inilah-sadar-gowes/">SADAR GOWES</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Nudgeplus</h4>
+        <ul>
+          <li><a href="https://nudgeplus.net/about-us/">About Us</a></li>
+          <li><a href="https://nudgeplus.net/category/news/">News</a></li>
+          <li><a href="https://medium.com/nudgeplus">Articles (Medium)</a></li>
+        </ul>
+        <h4 style="margin-top:16px;">Follow</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/company/nudgeplus/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/nudgeplus_ig/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://nudgeplus.net/youtube-channel/" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span>© 2026 Nudgeplus · Simple · Scientific · Impactful</span>
+      <span>Jakarta · Surabaya · London</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Sticky nav — show after hero scroll
+(function() {
+  var nav = document.getElementById('stickyNav');
+  var hero = document.getElementById('hero');
+  function onScroll() {
+    var heroBottom = hero.getBoundingClientRect().bottom;
+    if (heroBottom < 0) {
+      nav.classList.add('visible');
+    } else {
+      nav.classList.remove('visible');
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+
+// KALIBER detail toggle
+function toggleKDetail(btn) {
+  var detail = document.getElementById('kaliberDetail');
+  var open = detail.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+  btn.textContent = open ? 'Hide full methodology ▴' : 'Read the full methodology ▾';
+}
+
+// KALIBER accordion steps
+function toggleKAcc(header) {
+  var body = header.nextElementSibling;
+  var open = body.classList.toggle('open');
+  header.classList.toggle('open', open);
+}
+
+// Project expand
+function expandProject(btn) {
+  var card = btn.closest('.project-card');
+  var detail = card.querySelector('.project-detail');
+  var open = detail.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+  btn.textContent = open ? 'Hide methodology ▴' : 'View methodology ▾';
+  // Handle Jasa Raharja alternate text
+  if (btn.textContent.includes('4-phase')) {
+    btn.textContent = open ? 'Hide 4-phase structure ▴' : 'View 4-phase structure ▾';
+  }
+}
+
+// Project filter tabs
+function filterProjects(sector, btn) {
+  // Update tab states
+  document.querySelectorAll('.filter-tab').forEach(function(t) {
+    t.classList.remove('active');
+    t.setAttribute('aria-selected', 'false');
+  });
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+
+  var cards = document.querySelectorAll('.project-card');
+  var moreBtn = document.getElementById('moreProjectsBtn');
+
+  // Determine which cards to show based on sector
+  cards.forEach(function(card) {
+    var cardSectors = card.getAttribute('data-sector') || '';
+    var hidden = card.id === 'projectSolve' || card.id === 'projectBritAcad' || card.id === 'projectPersonality';
+
+    if (sector === 'all') {
+      // Show only the primary 5 by default, hide the extra 3
+      if (hidden) {
+        card.classList.remove('show');
+        card.style.display = '';
+      } else {
+        card.classList.add('show');
+        card.style.display = '';
+      }
+      moreBtn.style.display = '';
+    } else {
+      // Filter: show matching cards regardless of hidden status
+      if (cardSectors.includes(sector)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+      moreBtn.style.display = 'none';
+    }
+  });
+}
+
+// Load more projects
+function loadMoreProjects() {
+  var extraCards = ['projectSolve', 'projectBritAcad', 'projectPersonality'];
+  extraCards.forEach(function(id) {
+    var card = document.getElementById(id);
+    if (card) { card.style.display = 'block'; }
+  });
+  document.getElementById('moreProjectsBtn').style.display = 'none';
+}
+
+// FAQ toggle
+function toggleFaq(btn) {
+  var answer = btn.nextElementSibling;
+  var open = answer.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open);
+}
+</script>
+</body>
+</html>

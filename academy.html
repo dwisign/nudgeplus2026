@@ -21,7 +21,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,18 +31,65 @@
   <div class="container nav-inner">
     <a href="index.html" class="logo" aria-label="Nudgeplus home"><img src="image/Nudgeplus_transparent.png" alt="Nudgeplus" class="logo-img"></a>
     <div class="navr">
+      <a href="homepage2.html" class="nl">Home</a>
       <a href="services.html" class="nl">Services</a>
-      <a href="academy.html" class="nl active" aria-current="page">Academy</a>
-      <a href="gap-finder.html" class="nl">Gap Finder</a>
+      <a href="academy.html" class="nl active" aria-current="page">Training</a>
+      <!-- <a href="services.html#projects" class="nl">Projects</a> -->
+      <div class="nl-drop">
+        <button type="button" class="nl nl-drop-btn" aria-haspopup="true" aria-expanded="false">
+          News & Update
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nl-drop-menu" role="menu">
+          <a href="https://nudgeplus.net/category/news/" role="menuitem">News</a>
+          <a href="https://medium.com/nudgeplus" target="_blank" rel="noopener" role="menuitem">Article</a>
+          <a href="https://nudgeplus.net/youtube-channel/" role="menuitem">Youtube Channel</a>
+          <a href="https://nudgeplus.net/indonesia-personality-map/" role="menuitem">Indonesia Personality Map</a>
+        </div>
+      </div>
+      <a href="https://nudgeplus.net/about-us/" class="nl">The Team</a>
       <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%20Academy%2C%0A%0ATrack%3A%20%5BA%20%2F%20B%20%2F%20C%5D%0AModule%3A%20%5B...%5D%0AFormat%3A%20%5Bin-person%20%2F%20online%20%2F%20in-house%5D" class="ncta" target="_blank" rel="noopener">Book a Session</a>
     </div>
+    <button type="button" class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-hd">
+    <a href="index.html" class="logo" aria-label="Nudgeplus home"><img src="image/Nudgeplus_transparent.png" alt="Nudgeplus" class="logo-img"></a>
+    <button type="button" class="mobile-close" id="mobileClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu-links">
+    <a href="services.html" class="mnl">Services</a>
+    <a href="academy.html" class="mnl">Academy</a>
+    <a href="https://nudgeplus.net/about-us/" class="mnl">About</a>
+    <a href="services.html#projects" class="mnl">Projects</a>
+    <div class="mnl-drop">
+      <button type="button" class="mnl mnl-drop-btn" aria-expanded="false">
+        Update
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="mnl-drop-menu">
+        <a href="https://nudgeplus.net/category/news/">News</a>
+        <a href="https://medium.com/nudgeplus" target="_blank" rel="noopener">Article</a>
+        <a href="https://nudgeplus.net/youtube-channel/">Youtube Channel</a>
+        <a href="https://nudgeplus.net/indonesia-personality-map/">Indonesia Personality Map</a>
+      </div>
+    </div>
+  </div>
+  <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%20Academy%2C%0A%0ATrack%3A%20%5BA%20%2F%20B%20%2F%20C%5D%0AModule%3A%20%5B...%5D%0AFormat%3A%20%5Bin-person%20%2F%20online%20%2F%20in-house%5D" class="ncta mobile-cta" target="_blank" rel="noopener">Book a Session</a>
+</div>
 
 <!-- FLOATING WHATSAPP BUTTON -->
 <a href="https://wa.me/447729735806?text=Hi%20Nudgeplus%20Academy%2C%20I%27d%20like%20to%20book%20a%20training%20session." class="wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.565 4.14 1.545 5.875L.057 23.862l6.155-1.607A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-5.022-1.38l-.36-.214-3.732.975.999-3.637-.235-.374A9.788 9.788 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182c5.428 0 9.818 4.391 9.818 9.818 0 5.428-4.39 9.818-9.818 9.818z"/></svg>
-  Book a Session
+  <span class="wa-text">Book a Session</span>
 </a>
 
 <!-- HERO -->
@@ -667,7 +714,7 @@
       <div class="ft-brand">
         <a href="index.html" class="logo footer-logo" aria-label="Nudgeplus home"><img src="image/Nudgeplus_transparent.png" alt="Nudgeplus" class="logo-img"></a>
         <p class="ftdesc">Indonesia's behavioral science firm. Research · Consultancy · Training. KALIBER-powered. Since 2019.</p>
-        <p style="margin-top:1rem;font-size:0.85rem"><a href="mailto:info@nudgeplus.net" style="color:#ffffff">info@nudgeplus.net</a></p>
+        <p style="margin-top:1rem;font-size:0.85rem"><a href="mailto:info@nudgeplus.net" style="color:var(--primary)">info@nudgeplus.net</a></p>
       </div>
       <div class="fc">
         <h4>Services</h4>
@@ -731,6 +778,57 @@ window.addEventListener('scroll', function() {
     navbar.classList.remove('scrolled');
   }
 });
+
+/* NAV — desktop "Update" dropdown */
+document.querySelectorAll('.nl-drop').forEach(drop => {
+  const btn = drop.querySelector('.nl-drop-btn');
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = drop.classList.contains('open');
+    document.querySelectorAll('.nl-drop.open').forEach(d => { d.classList.remove('open'); d.querySelector('.nl-drop-btn').setAttribute('aria-expanded', 'false'); });
+    if (!isOpen) { drop.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+  });
+});
+document.addEventListener('click', () => {
+  document.querySelectorAll('.nl-drop.open').forEach(d => { d.classList.remove('open'); d.querySelector('.nl-drop-btn').setAttribute('aria-expanded', 'false'); });
+});
+
+/* NAV — mobile off-canvas menu */
+(function initMobileMenu() {
+  const burger = document.getElementById('navBurger');
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileOverlay');
+  const closeBtn = document.getElementById('mobileClose');
+  if (!burger || !menu || !overlay) return;
+
+  function openMenu() {
+    menu.classList.add('open');
+    overlay.classList.add('open');
+    menu.setAttribute('aria-hidden', 'false');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    menu.classList.remove('open');
+    overlay.classList.remove('open');
+    menu.setAttribute('aria-hidden', 'true');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  burger.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+  menu.querySelectorAll('.mnl:not(.mnl-drop-btn), .mnl-drop-menu a, .mobile-cta').forEach(a => a.addEventListener('click', closeMenu));
+
+  const mDrop = menu.querySelector('.mnl-drop');
+  if (mDrop) {
+    mDrop.querySelector('.mnl-drop-btn').addEventListener('click', () => {
+      const isOpen = mDrop.classList.toggle('open');
+      mDrop.querySelector('.mnl-drop-btn').setAttribute('aria-expanded', isOpen);
+    });
+  }
+})();
 
 function selectTrack(id, card) {
   document.querySelectorAll('.tcard').forEach(c => { c.classList.remove('active'); c.setAttribute('aria-selected','false'); });
