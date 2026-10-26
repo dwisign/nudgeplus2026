@@ -1,12 +1,12 @@
 # Nudgeplus Design System
 
-The design standard for the Nudgeplus 2026 site. **`style.css` is the single stylesheet for every page.** It holds all tokens and components; `homepage2.html` is the reference page that shows them in use.
+The design standard for the Nudgeplus 2026 site. **`style.css` is the single stylesheet for every page.** It holds all tokens and components; `index.html` (the homepage) is the reference page that shows them in use.
 
 Pages built on this system:
 
 | Page | Stylesheet | Notes |
 |---|---|---|
-| `homepage2.html` | `style.css` | **Reference page.** Hero visual, logo ticker, grants carousel, services, KALIBER, proof, news, testimonials |
+| `index.html` | `style.css` | **Reference page (homepage).** Hero visual, logo ticker, grants carousel, services, KALIBER, proof, news, testimonials |
 | `services.html` | `style.css` | Inner page: KALIBER, formats, projects, sectors, process + FAQ |
 | `academy.html` | `style.css` | Inner page: track selector, modules, events, formats |
 | `gap-finder.html` | `style.css` + page `<style>` | Quiz widget. Its page styles use shared tokens only |
@@ -181,7 +181,7 @@ Desktop-first `max-width` queries. Use these values; don't invent new ones.
 
 ## 5. Page skeleton
 
-Every page follows this order. Copy the shared blocks (nav, mobile menu, WhatsApp, CTA, footer, scripts) from `homepage2.html` verbatim and change only the active link.
+Every page follows this order. Copy the shared blocks (nav, mobile menu, WhatsApp, CTA, footer, scripts) from `index.html` verbatim and change only the active link.
 
 ```html
 <!DOCTYPE html>
@@ -233,7 +233,7 @@ Fixed, 76px tall, white, `z-index: 300`. There is no border; JS adds `.scrolled`
       <img src="image/Nudgeplus_transparent.png" alt="Nudgeplus" class="logo-img">
     </a>
     <div class="navr">
-      <a href="homepage2.html" class="nl">Home</a>
+      <a href="index.html" class="nl">Home</a>
       <a href="services.html" class="nl active" aria-current="page">Services</a>
       <a href="academy.html" class="nl">Training</a>
       <div class="nl-drop">
@@ -255,7 +255,7 @@ Fixed, 76px tall, white, `z-index: 300`. There is no border; JS adds `.scrolled`
 ```
 
 - `.nl` links are 0.9rem/600, `--text-muted`. On hover they turn teal and a 2px teal underline grows from 0 to 100%.
-- **Current page:** add `class="nl active"` and `aria-current="page"`. Homepage2 itself has no active link.
+- **Current page:** add `class="nl active"` and `aria-current="page"`. The homepage (`index.html`) has no active link.
 - `.ncta` is the teal pill CTA with a `--primary-glow` shadow.
 - Mobile uses an off-canvas `.mobile-menu` (with `.mnl` links and a `.mnl-drop` accordion) and a `.mobile-overlay`. Toggle `.open` on both, set `aria-hidden` and `aria-expanded`, and lock body scroll.
 
@@ -362,7 +362,7 @@ All cards share the same base: square corners, `--surface-card` fill, `--shadow-
 | **Proof / result** `.pc` | `.pgrid` (3-col), `.pgrid.pg2` (2-col) | 1.5px `--border`, `--primary-border` on hover | `.pcsvc` eyebrow → `.pcn` big number → `.pcd` claim → `.pce` italic quote → `.pcs` source |
 | **Testimonial** `.tc` | `.tgrid` (3-col) | none | `.tcs` gold stars → `.tcctx` eyebrow → `blockquote.tcq` → `.tcp` (`.tcav` initials avatar + `.tcnm` / `.tcrl`) |
 | **Format / pricing** `.fmt` | `.formats-grid` | 1.5px `--border` | `.fmt-tag` → `h3` → `.fmt-duration` → `.fmt-desc` → `.fmt-list` → `.fmt-foot` |
-| **Team** `.team-card` | `.team-grid` (3 → 2 → 1 col) | none | `.team-head` (`img.team-photo` 72px circle + `.team-name` / `.team-role`) → `.team-bio` → `.team-social > a.team-li` |
+| **Team** `.team-card` | `.team-grid` (3 → 2 → 1 col) | none | `.team-head` (`img.team-photo` 72px circle + `.team-name` / `.team-role`) → `.team-bio` → `.team-social > a.team-li` (LinkedIn, blue on hover) or `a.team-li.team-web` (personal site, globe icon, teal on hover) |
 | **News** `.news-card` | `.news-row` (horizontal scroll-snap) | 1px `--border` | `.news-thumb` → `.news-title` → `.news-readmore` |
 
 **Featured modifiers:**

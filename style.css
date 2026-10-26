@@ -1305,6 +1305,10 @@ h1 em {
   color: #0a66c2;
 }
 
+.team-web:hover {
+  color: var(--primary);
+}
+
 .team-li svg {
   width: 18px;
   height: 18px;
